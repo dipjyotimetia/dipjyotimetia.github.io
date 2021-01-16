@@ -1,17 +1,14 @@
 ---
 id: portfolio
-title: Portfolio
-sidebar_label: Portfolio
+title: Dipjyoti Metia
 ---
-
-<!--<img src="https://avatars0.githubusercontent.com/u/18288720?s=400&u=d754ce2c0b32c1237faa0f6a2cbc76d2ceb151b3&v=4" width="200">  -->
 
 • Certified AWS Solution Architect Associate.   
 • Certified Microsoft Azure fundamentals.   
 • Certified Scrum Master from Scrum Institute.   
 • Proficient in Agile delivery model with good experience on Scrum Methodology.   
 • Proven experience in Functional Automation API/UI Testing – ST, SIT, Regression.  
-• Love to learn! and Read medium.com, dev.to engineering blogs, enjoy to learn new technologies.    
+• Love to learn! and Read medium.com, dev.to engineering blogs
 
 ### **SDET | Test Automation Engineer | Test Framework Developer**
 
@@ -28,48 +25,50 @@ sidebar_label: Portfolio
 **Dates Employed**: May 2020 - Present  
 **Location**: Melbourne, Australia  
 - Working as a Lead Software Engineer in Test.
-- Started by developing golang based integration test framework to test **gRPC** services and google cloud Spanner database.
+- Started by developing [Golang](https://golang.org/) based integration test framework to test [**gRPC**](https://grpc.io/) services and google cloud Spanner database.
 - Working with google cloud pub sub and apache Kafka.
+- Creating github actions script to run tests in CI.
 - Developing End to End testing strategy of a continuous delivery pipeline.
 - Responsible for uplifting the testing capability in google cloud, in a cloud native development environment.
 - Focusing for integrating Integration Test -> Security Test -> Performance Test in a single delivery pipeline.
+- Created a performance testing framework using [K6](https://k6.io/) to test gRPC and rest services.
 
 **Software Development Engineer in Test**  
-**Company Name**: BetEasy Pty Ltd  
+**Company Name**: BetEasy Pty Ltd(Sportsbet)  
 **Dates Employed**: April 2018 – May 2020  
 **Location**: Melbourne, Australia  
 - Working as a Software Development Engineer in Test
-- Started by creating Mobile Automation Framework from scratch using **Appium** with gradle to test native mobile apps for iOS and Android, which supports jenkins integration for CI/CD pipeline and artifactory with ability to run in cloud AWS device farm.
-- Setup **SeeTest Cloud** on premise from scratch, starting from getting Experitest vendor, setup server to develop framework to test mobile application iOS & Android in on prem cloud.
+- Started by creating Mobile Automation Framework from scratch using [**Appium**](https://appium.io/) with gradle to test native mobile apps for iOS and Android, which supports jenkins integration for CI/CD pipeline and artifactory with ability to run in cloud AWS device farm.
+- Setup [**SeeTest Cloud**](https://experitest.com/) on premise from scratch, starting from getting Experitest vendor, setup server to develop framework to test mobile application iOS & Android in on prem cloud.
 - Created on demand mobile app & api testing by integrated slack with jenkins.
-- Integrated java **RestAssured** with the framework to automate mobile API handling different authentication mechanism.
+- Integrated java [**RestAssured**](https://rest-assured.io/) with the framework to automate mobile API handling different authentication mechanism.
 - Integrated AWS S3 bucket with framework to host jenkins test execution allure report in static html page.
 - Worked on an existing C# Entity Core and RestSharp based API testing framework for End to End api testing which integrated with AWS S3 and DynamoDb to produce test reports from the result xml.
-- Supported in webui framework development using **Puppeteer** and jest, also published a npm module in npm repo.
-- Created mock server using **Json-server** to support frontend for unit testing.
-- Good understanding of **Jenkins** , **Artifactory** ,**Bitbucket** to create an environment parameter based continuous integration pipeline and distributed builds if require. 
+- Supported in WebUI framework development using [**Puppeteer**](https://developers.google.com/web/tools/puppeteer) and [jest](https://jestjs.io/), also published a npm module in npm repo.
+- Created mock server using [**Json-server**](https://github.com/typicode/json-server) to support frontend for unit testing.
+- Good understanding of [**Jenkins**](https://www.jenkins.io/), [**Artifactory**](https://jfrog.com/artifactory/), [**Bitbucket**](https://bitbucket.org/product/) to create an environment parameter based continuous integration pipeline and distributed builds if require. 
 - Experience of database testing in Microsoft SQL Server with ability to create/validate store procedures, performed in one of the database migration project.
 - Hands-on experience with AWS API Gateway with an integration to lambda function using nodejs to develop a serverless api. 
 - Worked on DotNet core 2.1 to develop backend api for one small internal application in aws lambda.
 - Created docker image of test project and pushing into aws ECR to run from jenkins.
 - Single handedly converted all test frameworks used in all different projects to run in docker containers with custom images pushed into ECR.
-- Proficient in serverless testing by using **localstack** and to validate objects in s3 and data in dynamodb.
-- Strong Handson experience in AWS S3,EC2,DynamoDB and Lambda functions creation 
+- Proficient in serverless testing by using [**localstack**](https://github.com/localstack/localstack) and to validate objects in s3 and data in dynamodb.
+- Strong Hands-on experience in AWS S3,EC2,DynamoDB and Lambda functions creation 
 programmatically using aws sdk for C# and nodejs.
 - Performed POC to create and deploy infrastructure as code using AWS CDK(typescript) to publish docker image in aws ECR.
 - Familiar with AWS well architect framework.
-- Implemented practice of using **Sonarqube** for static code analysis and vulnerability check for test frameworks.
-- Implemented Kibana and grafana dashboard to visualize test exception logging. 
+- Implemented practice of using [**Sonarqube**](https://www.sonarqube.org/) for static code analysis and vulnerability check for test frameworks.
+- Implemented [Kibana](https://www.elastic.co/kibana) and [grafana](https://grafana.com/) dashboard to visualize test exception logging. 
 - Developed Slack-Bot in aws lambda with jenkins to trigger mobile test jobs from slack command(@mobile-bot). 
 - Created End to End API testing framework using typescript supertest & axios with knexjs ORM and lokijs in-memory db, database integration to test microservices for mobile apps and running in docker container.
-- Developed a full-fledged WebUi testing framework using **Cypress** for a react SPA and running it in a docker container.
+- Developed a full-fledged WebUi testing framework using [**Cypress**](https://www.cypress.io/) for a react SPA and running it in a docker container.
 - Contributed in visual regression testing framework to run in docker container and publish results in s3 bucket.
 - Created infrastructure for end to end testing in CI environment by using cloudformation template.
 - Created jenkins and docker environment in aws to run tests in cloud.
 - Familiar with aws fargate to run docker containers.
 - Continuous monitor of tests execution by hooking tests run in elasticsearch and visulize the data in OpenDistro/kibana.
 - Monitor api error logs in sumologic, New Relic dashboards.
-- Created Runscope dashbord to monitor api 24/7 in production, aned error alert in slack channel.
+- Created [Runscope](https://www.runscope.com/) dashbord to monitor api 24/7 in production, aned error alert in slack channel.
 
 
 **Senior Test Analyst**  
@@ -103,7 +102,7 @@ programmatically using aws sdk for C# and nodejs.
 - Working on an existing behavior driven cucumber selenium framework for web ui automation.
 - SQL database automation and validation using java jdbc.
 - Database testing using oracle sql and Teradata.
-- Automating ui of **SAS**(Statistical analysis system) fraud detection application using selenium.
+- Automating ui of [**SAS**](https://www.sas.com/en_au/home.html) fraud detection application using selenium.
 - Preparing, reviewing and executing Test Cases and Scenarios using ALM.
 - Windows application **Seibel** and web ui automation using UFT 11.5.
 - Api testing using SoapUI
@@ -121,7 +120,8 @@ programmatically using aws sdk for C# and nodejs.
 
 
 ### **Certifications and Recognitions**
-- [AWS Certified Solution Architect Associate](https://www.certmetrics.com/amazon/public/badge.aspx?i=1&t=c&d=2020-02-29&ci=AWS01162883)
+- [AWS Certified: Solution Architect Associate](https://www.youracclaim.com/badges/3ef7bcf3-c5a8-43ca-bcea-6405e7d122b8/public_url)
+- [Microsoft Certified: Azure Fundamentals](https://www.youracclaim.com/badges/e91d4b08-c17c-4af7-8dab-7a9da01a179a/public_url)
 - [Scrum Master Certified](https://www.amazon.com/clouddrive/share/mi8Em9y3pfQNMhYNZMNlLNwIGv6vmSGG8MHvR86iTP7)
 - [BetEasy (Back a Winner & CodeFest Winner)](https://www.amazon.com/clouddrive/share/RO3f4ZBo7Up8EW7t322ZBUKyH7CULY0dk6zciVMzTxV)
 - National Australia Bank (Will to Win, Be Bold, living and role-modelling NAB's Values)
@@ -135,7 +135,7 @@ programmatically using aws sdk for C# and nodejs.
    
 ### **Education**
 **Masters Of Technology**: West Bengal University of Technology, India, 2014  
-**Bachelers Of Technology**: West Bengal University of Technology, India, 2012
+**Bachelors Of Technology**: West Bengal University of Technology, India, 2012
 
 
 <!-- _config.yaml

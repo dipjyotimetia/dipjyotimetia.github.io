@@ -33,10 +33,15 @@ module.exports = {
           position: 'left'
         },
         {
-          href: 'https://github.com/dipjyotimetia',
-          label: 'GitHub',
+          href: 'https://www.thoughtworks.com/radar',
+          label: 'Technology Radar',
           position: 'left',
         },
+        // {
+        //   to: 'docs/portfolio',
+        //   label: 'Resume',
+        //   position: 'right',
+        // },
       ],
     },
     footer: {
