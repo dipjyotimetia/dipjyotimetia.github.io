@@ -31,17 +31,24 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Security',
+      label: 'Cloud',
       items: [
-        'snippets/security/sec1',
+        {
+          AWS:['snippets/cloud/aws/aws1'],
+          GOOGLE:['snippets/cloud/google/google1'],
+          AZURE:['snippets/cloud/azure/azure1'],
+          CI:[
+            'snippets/cloud/ci/docker',
+            'snippets/cloud/ci/jenkins',
+          ],
+        }
       ]
     },
     {
       type: 'category',
-      label: 'CI',
+      label: 'Security',
       items: [
-        'snippets/ci/docker',
-        'snippets/ci/jenkins',
+        'snippets/security/sec1',
       ]
     },
     {

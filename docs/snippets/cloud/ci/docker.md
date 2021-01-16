@@ -51,7 +51,6 @@ docker exec -it [CONTAINER_ID] bash
 docker stop $(docker ps -q)
 docker rm $(docker ps -aq)
 ```
-
 `docker ps` options:
 
 - `-q`: Only display numeric IDs
@@ -110,8 +109,6 @@ Before the script can be used, replace the following placeholders:
 - `HOST_PORT` : The host port your container port will be mapped to. This is the port that is exposed on the host system.
 
 ### Resources
-
-
 
 - [Docker get Started](http://realestate-com-au.github.io/intro-to-docker/#1)
 - [How To Build a Node.js Application with Docker](https://www.digitalocean.com/community/tutorials/how-to-build-a-node-js-application-with-docker#step-4-%E2%80%94-using-a-repository-to-work-with-images)

@@ -82,7 +82,7 @@ pipeline {
 		}
 	}
 ```
-### EmailableReport
+### Emailable Report
 ```html
 Hi All,
 <br/>
