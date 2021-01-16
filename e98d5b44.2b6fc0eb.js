@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[47],{115:function(s){s.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"serverless","name":"serverless","count":1,"permalink":"/blog/tags/serverless"}')}}]);

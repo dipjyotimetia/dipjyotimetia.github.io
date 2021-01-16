@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{87:function(e){e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"Hola","permalink":"/blog/hola"},{"title":"Serverless Framework","permalink":"/blog/serverless"}]}')}}]);
