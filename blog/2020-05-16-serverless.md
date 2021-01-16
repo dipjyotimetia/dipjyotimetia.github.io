@@ -6,6 +6,9 @@ author_title: Lead Software Engineer
 author_url: https://github.com/dipjyotimetia
 author_image_url: https://avatars3.githubusercontent.com/u/18288720?s=400&u=168a31a123ff5c1c44afc29a579f91d13813da54&v=4
 tags: [serverless, tech, aws]
+description: This is a blog about serverless framework using nodejs
+image: https://raw.githubusercontent.com/Develop-X/Serverless/master/ServerlessFramework.png
+hide_table_of_contents: false
 ---
 
 # Serverless Framework
