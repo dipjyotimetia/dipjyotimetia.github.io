@@ -6,7 +6,7 @@
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://dipjyotimetia.github.io/blog"/>
     <subtitle>Hola, welcome to my Tech Blog Blog</subtitle>
-    <icon>https://dipjyotimetia.github.io/img/favicon.ico</icon>
+    <icon>https://dipjyotimetia.github.io/img/pic.jpeg</icon>
     <entry>
         <title type="html"><![CDATA[Serverless Framework]]></title>
         <id>serverless</id>
