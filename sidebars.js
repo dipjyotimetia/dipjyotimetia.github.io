@@ -3,9 +3,9 @@ module.exports = {
     'Project': [
       'projects/hybridtestframework',
       'projects/mobiletestframework',
-      'projects/apitestautomation',
       'projects/cypress',
       'projects/testcafe',
+      'projects/apitestautomation',
     ],
   },
   'Snippets': [
@@ -35,6 +35,13 @@ module.exports = {
     },
     {
       type: 'category',
+      label: 'React',
+      items: [
+        'snippets/react/react1',
+      ]
+    },
+    {
+      type: 'category',
       label: 'Security',
       items: [
         'snippets/security/sec1',
@@ -60,13 +67,6 @@ module.exports = {
       label: 'IDE',
       items: [
         'snippets/ide/vscode',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'React',
-      items: [
-        'snippets/react/react1',
       ]
     },
   ]

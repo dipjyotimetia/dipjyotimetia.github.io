@@ -26,7 +26,7 @@ image: ../../static/img/projects/selenium.png
 ### Supported Platforms  
 This framework supports WebUi automation across a variety of browsers like Chrome, Firefox, IE, no only limited to this but extended to test rest api, security and visual testing.
 
-### Capabilities
+### Framework Capabilities
 * Cross browser testing support
 * Added BrowserStack support for CrossBrowser testing
 * Running tests in docker containers selenium grid
@@ -38,25 +38,26 @@ This framework supports WebUi automation across a variety of browsers like Chrom
 * Accessibility testing using axe-selenium
 * Stubbed api testing using WireMock
 * Can send logs to ElasticSearch for kibana dashboard visualization
-* Database testing support(Coming Soon...)
-* Kubernetes support(Coming soon...)   
+* Database testing support
+* Kubernetes support
     
 ### Setup & Tools
-* [Install intellij](https://www.jetbrains.com/idea/download/)
+* [Install IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 * [Install docker desktop](https://www.docker.com/products/docker-desktop)
-* [Java JDK_8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html) or any latest version.  
+* [Java JDK_8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
 * [Gradle](https://gradle.org/next-steps/?version=6.4&format=bin)
 * [Allure](https://github.com/allure-framework/allure2/archive/2.13.8.zip)    
-* Set Environment variables      
-    *JAVA_HOME: Pointing to the Java SDK folder\bin*   
-    *GRADLE_HOME: Pointing to Gradle directory\bin*      
-    *ALLURE_HOME: Pointing to allure directory\bin*  
-
+* Set Environment variables  
+```bash    
+  * JAVA_HOME: Pointing to the Java SDK folder\bin
+  * GRADLE_HOME: Pointing to Gradle directory\bin      
+  * ALLURE_HOME: Pointing to allure directory\bin  
+```
 ### Getting Started
-```shell
+```bash
 $ git clone 
 $ cd 
-$ import project from intellij as a gradle project
+$ import project from IntelliJ IDEA as a gradle project
 $ gradle clean
 $ gradle build
 $ gradle task E2E
@@ -65,42 +66,39 @@ $ gradle allureServe
 ```
 ### Docker Compose
 > Spawns chrome, firefox, selenium hub and OWASP proxy server    
-```shell
+```bash
 $ docker-compose up -d
 ```
 > Complete infrastructure creation for local run
-```shell
-$ $ docker-compose -f docker-compose-infra up -d
+```bash
+$ docker-compose -f docker-compose-infra up -d
 ```
 > Spawns four additional node-chrome/firefox instances linked to the hub
-```shell
+```bash
 $ docker-compose scale chrome=5
 $ docker-compose scale firefox=5
 ```
 :::tip
 ### Write your first user journey
-Create new class and name as the TC00*_E2E_TEST-***
- - Provide jira link in @Link
- - Provide all the api components as @Feature
+ - Create new class and name as the `TC00*_E2E_TEST-***`
+ - Provide jira link in `@Link`
+ - Provide all the api components as `@Feature`
  - Provide test severity and description
  - Write test
- - Use CatchBlock in try/catch section
+ - Use CatchBlock in `try/catch` section
 :::
 
 ### JenkinsExecution  
 ![image](../../static/img/projects/jenkinsExecution.png)  
 
-### GridServer 2.0
+### Selenium GridServer 2.0
 ![image](../../static/img/projects/seleniumGrid.png)    
 
-### Allure Reporting
+### Allure Reporting 2.0
 ![image](../../static/img/projects/allureReport.png)    
 
 ### Gradle Report
 ![image](../../static/img/projects/gradleReport.png)  
-
-### TestResults
-![image](../../static/img/projects/testResults.png)    
 
 ### BrowserStack Dashboard
 ![image](../../static/img/projects/browserStack.png)      
