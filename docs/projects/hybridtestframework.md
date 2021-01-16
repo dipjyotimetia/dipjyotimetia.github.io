@@ -11,7 +11,7 @@ keywords:
   - rest-assured
   - OWASP
   - ZAP
-image: ../../static/img/selenium.png 
+image: ../../static/img/projects/selenium.png 
 ---
 #### Full fledged WEB, API and Security testing framework using selenium,ZAP OWASP proxy and rest-assured
 
@@ -19,8 +19,9 @@ image: ../../static/img/selenium.png
 [![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/CypressTest/Selenium)
 ![CI](https://github.com/dipjyotimetia/HybridTestFramewrok/workflows/CI/badge.svg)
 [![Build Status](https://dev.azure.com/dipjyoti/OpensourceProjects/_apis/build/status/dipjyotimetia.HybridTestFramewrok?branchName=master)](https://dev.azure.com/dipjyoti/OpensourceProjects/_build/latest?definitionId=7&branchName=master)  
+[![SupportedBy JetBrains](../../static/img/projects/jetbrains.svg)](https://www.jetbrains.com/?from=HybridTestFramework)
 
-![img](../../static/img/selenium.png)      
+![img](../../static/img/projects/selenium.png)      
 
 ### Supported Platforms  
 This framework supports WebUi automation across a variety of browsers like Chrome, Firefox, IE, no only limited to this but extended to test rest api, security and visual testing.
@@ -85,3 +86,24 @@ Create new class and name as the TC00*_E2E_TEST-***
  - Write test
  - Use CatchBlock in try/catch section
 :::
+
+### JenkinsExecution  
+![image](../../static/img/projects/jenkinsExecution.png)  
+
+### GridServer 2.0
+![image](../../static/img/projects/seleniumGrid.png)    
+
+### Allure Reporting
+![image](../../static/img/projects/allureReport.png)    
+
+### Gradle Report
+![image](../../static/img/projects/gradleReport.png)  
+
+### TestResults
+![image](../../static/img/projects/testResults.png)    
+
+### BrowserStack Dashboard
+![image](../../static/img/projects/browserStack.png)      
+
+### LogsView
+![image](../../static/img/projects/logs.png)
