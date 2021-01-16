@@ -20,23 +20,13 @@ module.exports = {
     },
     {
       type: 'category',
-      label: 'Go',
+      label: 'Programming',
       items: [
-        'snippets/go/godoc1',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'java',
-      items: [
-        'snippets/java/java1',
-      ]
-    },
-    {
-      type: 'category',
-      label: 'React',
-      items: [
-        'snippets/react/react1',
+        {
+          GO:['snippets/programming/go/godoc1'],
+          Java:['snippets/programming/java/java1'],
+          React:['snippets/programming/react/react1'],
+        }
       ]
     },
     {
