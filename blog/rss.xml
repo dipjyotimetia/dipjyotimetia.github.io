@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Hola, welcome to my Tech Blog Blog</title>
+        <link>https://dipjyotimetia.github.io/blog</link>
+        <description>Hola, welcome to my Tech Blog Blog</description>
+        <lastBuildDate>Fri, 15 Jan 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[Hola]]></title>
+            <link>https://dipjyotimetia.github.io/blog/hola</link>
+            <guid>hola</guid>
+            <pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Welcome to the very first edition of my tech blog.]]></description>
+        </item>
+    </channel>
+</rss>
