@@ -9,8 +9,8 @@ import { url } from '../../docusaurus.config';
 
 const features = [
   {
-    title: <a href="/blog/docs/">Projects</a>,
-    imageUrl: 'img/undraw_docusaurus_mountain.svg',
+    title: <a href="/docs/">Projects</a>,
+    imageUrl: 'img/oss.svg',
     description: (
       <>
         Projects are highting all the different set of ongoing
@@ -19,8 +19,8 @@ const features = [
     ),
   },
   {
-    title: <a href="/blog/blog">Blogs</a>,
-    imageUrl: 'img/undraw_docusaurus_tree.svg',
+    title: <a href="/blog">Blogs</a>,
+    imageUrl: 'img/blog.svg',
     description: (
       <>
         Blogs are nothing but discussion about different technical parameters and learnings.
@@ -29,7 +29,7 @@ const features = [
   },
   {
     title: <a href="https://github.com/dipjyotimetia">Github</a>,
-    imageUrl: 'img/undraw_docusaurus_react.svg',
+    imageUrl: 'img/dev.svg',
     description: (
       <>
         Finally the tech-shop where you can find all of my projects and contributions.

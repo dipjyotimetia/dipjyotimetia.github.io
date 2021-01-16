@@ -12,7 +12,6 @@ image: ../../static/img/projects/FrameworkArchitecture.png
 ---
 #### Full fledged Mobile, API and Database framework using appium and rest-assured
 
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/6aaf27fdb62e4792ba5a3a9841ce13ee)](https://www.codacy.com/app/dipjyotimetia/MobileTestFramework?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=TestautoDev/MobileTestFramework&amp;utm_campaign=Badge_Grade)
 ![CI](https://github.com/dipjyotimetia/MobileTestFramework/workflows/CI/badge.svg)   
 
 ![img](../../static/img/projects/FrameworkArchitecture.png)   
