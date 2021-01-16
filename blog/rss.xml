@@ -14,5 +14,12 @@
             <pubDate>Fri, 15 Jan 2021 00:00:00 GMT</pubDate>
             <description><![CDATA[Welcome to the very first edition of my tech blog.]]></description>
         </item>
+        <item>
+            <title><![CDATA[Serverless Framework]]></title>
+            <link>https://dipjyotimetia.github.io/blog/serverless</link>
+            <guid>serverless</guid>
+            <pubDate>Sat, 16 May 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[Serverless Framework]]></description>
+        </item>
     </channel>
 </rss>
