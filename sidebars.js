@@ -69,7 +69,7 @@ module.exports = {
       type: 'category',
       label: 'OS & Tools',
       items: [
-        'snippets/tools/git',
+        'snippets/tools/github',
         'snippets/tools/ubuntu',
       ]
     },
