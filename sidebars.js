@@ -69,8 +69,8 @@ module.exports = {
       type: 'category',
       label: 'OS & Tools',
       items: [
-        'snippets/tools/github',
-        'snippets/tools/ubuntu',
+        'snippets/toolos/github',
+        'snippets/toolos/ubuntu',
       ]
     },
     'snippets/generic',
