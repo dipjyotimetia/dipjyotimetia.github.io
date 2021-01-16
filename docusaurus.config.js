@@ -23,13 +23,13 @@ module.exports = {
           position: 'left',
         },
         {
-          to: 'blog',
-          label: 'Blog',
+          to: 'docs/snippets/overview',
+          label: 'Docs',
           position: 'left'
         },
         {
-          to: 'docs/snippets/overview',
-          label: 'Snippets',
+          to: 'blog',
+          label: 'Blog',
           position: 'left'
         },
         {

@@ -8,7 +8,7 @@ module.exports = {
       'projects/apitestautomation',
     ],
   },
-  'Snippets': [
+  'Docs': [
     'snippets/overview',
     {
       type: 'category',
@@ -16,7 +16,6 @@ module.exports = {
       items: [
         'snippets/generic/apitestsites',
         'snippets/generic/hyperv',
-        'snippets/generic/generic',
       ]
     },
     {
@@ -69,5 +68,14 @@ module.exports = {
         'snippets/ide/vscode',
       ]
     },
+    {
+      type: 'category',
+      label: 'OS & Tools',
+      items: [
+        'snippets/tools/git',
+        'snippets/tools/ubuntu',
+      ]
+    },
+    'snippets/generic',
   ]
 };

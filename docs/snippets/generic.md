@@ -1,7 +1,7 @@
 ---
 id: generic
-title: Generic Sites
-sidebar_label: Generic Sites
+title: Reading Lists
+sidebar_label: Reading Lists
 ---
 
 https://bitbar.com/blog/things-you-should-know-about-appium/
