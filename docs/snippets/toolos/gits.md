@@ -1,5 +1,5 @@
 ---
-id: github
+id: gits
 title: Git Cheat sheet
 ---
 
