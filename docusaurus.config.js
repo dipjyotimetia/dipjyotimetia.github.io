@@ -7,7 +7,7 @@ module.exports = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'dipjyotimetia',
-  projectName: 'dipjytimetia.github.io',
+  projectName: 'dipjyotimetia.github.io',
   themeConfig: {
     navbar: {
       title: 'Dipjyoti`s Blog',
