@@ -9,41 +9,83 @@ title: Testcafe Test Framework
 
 ### Installation:
 
-- Install _nodejs 12.6.2 lts_ [Link](https://nodejs.org/en/download/)
-- Install Vscode [link](https://code.visualstudio.com/download)
+- Install [nodejs 14.5.1 lts](https://nodejs.org/en/download/)
+- Install [VS_Code](https://code.visualstudio.com/download)
 
 ### Project Setup:
-
-- git clone repo
-- npm install
-
+```bash
+$ git clone repo https://github.com/dipjyotimetia/TestCafeTestFramework.git
+$ npm install
+```
 ### Write Code:
 
-- Add new spec file with the format TC00*\_SampleTest*\_spec.js
+- Add new spec file with the format `TC00*\_SampleTest*\_spec.ts`
 
-### Configure/update/set Test Environments:
+```typescript
+import { Selector } from "testcafe";
+import * as selector from "../src/selectors/index";
+import * as pages from "../src/pageObjects/index";
 
+fixture('Test TodoMVC App')
+    .page('http://todomvc.com/examples/vanillajs/')
+
+test.skip('Create todo', async t => {
+    await t
+        .maximizeWindow()
+        .typeText(selector.input, 'write blog post about JS')
+        .pressKey('enter')
+
+    await t
+        .maximizeWindow()
+        .expect(selector.todoItems.count)
+        .eql(1)
+
+    await t
+        .maximizeWindow()
+        .expect(selector.firstTodoItem.textContent)
+        .contains('write blog post about JS')
+})
+```
 
 ### Test:
 
 - `test:chrome` run tests in chrome browser
 
-### Generate Report Locally:
-
-
-### Built With
-
-- [TestCafe](https://devexpress.github.io/testcafe/documentation/getting-started/)
-- [Chalk](https://github.com/chalk/chalk)
-- [Chance](https://github.com/chancejs/chancejs)
-- [Faker](https://github.com/marak/Faker.js/)
-- [date-fns](https://github.com/date-fns/date-fns)
-- [lodash](https://github.com/lodash/lodash)
-- [cross-env](https://github.com/kentcdodds/cross-env)
-
 ### Configurations
-.testcaferc.json
-```json
+
+```typescript title="runner.config.ts"
+.filter((testName, fixtureName, fixturePath, testMeta, fixtureMeta) => {
+    return fixturePath.startsWith('D') &&
+        testName.match(someRe) &&
+        fixtureName.match(anotherRe) &&
+        testMeta.mobile === 'true' &&
+        fixtureMeta.env === 'staging';
+});
+
+.browsers(['chrome', 'firefox'])
+.browsers('chrome:headless')
+.browsers('chrome:headless --no-sandbox --disable-gpu')
+.concurrency(3);
+
+.screenshots({
+    path: 'reports/screenshots/',
+    takeOnFails: true,
+    pathPattern: '${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png'
+});
+
+.video('reports/videos/', {
+    singleFile: true,
+    failedOnly: true,
+    pathPattern: '${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.mp4'
+}, {
+    r: 20,
+    aspect: '4:3'
+});
+
+```
+### Full Configurations
+
+```json title=".testcaferc.json"
 {
     "browsers": ["chrome","edge", "firefox"],
     "reporter": {
@@ -101,36 +143,4 @@ title: Testcafe Test Framework
         "rejectUnauthorized": true
     }
 }
-```
-runnerConfig
-```typescript
-.filter((testName, fixtureName, fixturePath, testMeta, fixtureMeta) => {
-    return fixturePath.startsWith('D') &&
-        testName.match(someRe) &&
-        fixtureName.match(anotherRe) &&
-        testMeta.mobile === 'true' &&
-        fixtureMeta.env === 'staging';
-});
-
-.browsers(['chrome', 'firefox'])
-.browsers('chrome:headless')
-.browsers('chrome:headless --no-sandbox --disable-gpu')
-.concurrency(3);
-
-.screenshots({
-    path: 'reports/screenshots/',
-    takeOnFails: true,
-    pathPattern: '${DATE}_${TIME}/test-${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.png'
-});
-
-
-.video('reports/videos/', {
-    singleFile: true,
-    failedOnly: true,
-    pathPattern: '${TEST_INDEX}/${USERAGENT}/${FILE_INDEX}.mp4'
-}, {
-    r: 20,
-    aspect: '4:3'
-});
-
 ```

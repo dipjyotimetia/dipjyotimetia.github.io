@@ -16,5 +16,5 @@ This page contains some miscellaneous docs, startup guide and troubleshoot detai
 
 **Don't use this page if:**
 
-- :x: You don't want to get lost in to the tech.
-- :x: You are not interested to include your learnings or finding here
+- :x: You don't want to get lost in the tech.
+- :x: You are not interested to include your learnings or findings here.
