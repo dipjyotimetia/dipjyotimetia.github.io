@@ -7,7 +7,7 @@ author_url: https://github.com/dipjyotimetia
 author_image_url: https://avatars3.githubusercontent.com/u/18288720?s=400&u=168a31a123ff5c1c44afc29a579f91d13813da54&v=4
 tags: [github, tech, golang]
 description: This is a blog talked about github apis using golang
-image: ../static/img/blog/gogithub.png
+image: https://raw.githubusercontent.com/dipjyotimetia/dipjyotimetia.github.io/main/static/img/blog/gogithub.png
 hide_table_of_contents: true
 ---
 
