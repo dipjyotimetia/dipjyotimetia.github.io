@@ -37,6 +37,16 @@ module.exports = {
           label: 'Technology Radar',
           position: 'left',
         },
+        {
+          href: 'https://dev.to/',
+          label: 'Dev To',
+          position: 'left',
+        },
+        {
+          href: 'https://news.ycombinator.com/',
+          label: 'Hackers News',
+          position: 'left',
+        },
         // {
         //   to: 'docs/portfolio',
         //   label: 'Resume',
