@@ -38,14 +38,15 @@ This framework supports WebUi automation across a variety of browsers like Chrom
 * Stubbed api testing using WireMock
 * Can send logs to ElasticSearch for kibana dashboard visualization
 * Database testing support
+* Kafka testing support
 * Kubernetes support
     
 ### Setup & Tools
 * [Install IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 * [Install docker desktop](https://www.docker.com/products/docker-desktop)
-* [Java JDK_8](https://docs.aws.amazon.com/corretto/latest/corretto-8-ug/downloads-list.html)
+* [Java JDK_11](https://adoptopenjdk.net/)
 * [Gradle](https://gradle.org/next-steps/?version=6.4&format=bin)
-* [Allure](https://github.com/allure-framework/allure2/archive/2.13.8.zip)    
+* [Allure](https://github.com/allure-framework/allure2/archive/2.13.9.zip)    
 * Set Environment variables  
 ```bash    
   * JAVA_HOME: Pointing to the Java SDK folder\bin
@@ -55,7 +56,6 @@ This framework supports WebUi automation across a variety of browsers like Chrom
 ### Getting Started
 ```bash
 $ git clone 
-$ cd 
 $ import project from IntelliJ IDEA as a gradle project
 $ gradle clean
 $ gradle build
@@ -64,7 +64,7 @@ $ gradle allureReport
 $ gradle allureServe
 ```
 ### Docker Compose
-> Spawns chrome, firefox, selenium hub and OWASP proxy server    
+> Spin-up chrome, firefox, selenium hub and OWASP proxy server    
 ```bash
 $ docker-compose up -d
 ```
@@ -72,10 +72,28 @@ $ docker-compose up -d
 ```bash
 $ docker-compose -f docker-compose-infra up -d
 ```
-> Spawns four additional node-chrome/firefox instances linked to the hub
+> Spin-up four additional node-chrome/firefox instances linked to the hub
 ```bash
 $ docker-compose scale chrome=5
 $ docker-compose scale firefox=5
+```
+
+> Spin-up kafka instances
+```shell
+$ docker-compose -f docker-compose-kafka.yml up
+$ docker-compose -f docker-compose-kafka.yml down --rmi all
+```
+
+> Spin-up selenium hub in kubernetes instance
+```shell
+$ kubectl apply -f selenium-k8s-deploy-svc.yaml
+$ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
+$ kubectl proxy
+$ kubectl describe secret -n kube-system | grep deployment -A 12
+## To delete deployments
+$ kubectl delete deployment selenium-node-firefox
+$ kubectl delete deployment selenium-node-chrome
+$ kubectl delete deployment selenium-hub
 ```
 :::tip
 ### Write your first user journey
