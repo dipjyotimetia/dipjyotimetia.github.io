@@ -26,6 +26,7 @@ module.exports = {
           GO:['snippets/programming/go/godoc1'],
           Java:['snippets/programming/java/java1'],
           React:['snippets/programming/react/react1'],
+          Python:['snippets/programming/python/python1'],
         }
       ]
     },
