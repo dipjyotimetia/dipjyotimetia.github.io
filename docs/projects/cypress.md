@@ -3,13 +3,23 @@ id: cypress
 title: Cypress Test Framework
 ---
 
-[![Build Status](https://github.com/dipjyotimetia/CypressTest/workflows/CypressCI/badge.svg)](https://github.com/dipjyotimetia/CypressTest/actions)
+[![Build Status](https://github.com/dipjyotimetia/CypressTest/workflows/CypressCI/badge.svg)](https://github.com/dipjyotimetia/CypressTest/actions)   
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/d463521f/CypressTestFramework)   
 
-![img](https://cloud.githubusercontent.com/assets/1268976/20607953/d7ae489c-b24a-11e6-9cc4-91c6c74c5e88.png)
+## Cypress Test Framework
+
+![image](../../static/img/projects/CypressTestFramework.png)
+
+### Sorry Cypress Dashboard
+![image](../../static/img/projects/SorryCypressDashboard.png)
+![image](../../static/img/projects/SorryCyResult.png)
+
+### Cypress Test Result
+![image](../../static/img/projects/CyResult.png)
 
 ### Installation:
 
-- Install [nodejs 14.5.1 lts](https://nodejs.org/en/download/)
+- Install [nodejs 14.17 lts](https://nodejs.org/en/download/)
 - Install [VS_Code](https://code.visualstudio.com/download)
 
 ### Project Setup:
@@ -56,20 +66,18 @@ describe('Testing Web', function () {
 });
 ```
 
-### Test:
+#### Setup SorryCypress Dashboard:
+- `docker-compose up -d`
 
+#### Test:
+
+- `test:cypress` run tests in sorry cypress dashboard
 - `npm run cy:chrome` run tests in chrome browser
 - `npm run cypress:open` for test development and run(_Test Watcher is set to false_)
 - `npm run cy:test` run all tests in headless
-- `npx cypress run --env configFile=test --headed --spec 'cypress/integration/TC002_Login_Spec.ts'` To run specific test in chrome
+- `npx cypress run --env configFile=test --headed --spec 'cypress/integration/TC002_Login_Spec.js'` To run specific test in chrome
 
 ### Generate Report Locally
 
 - `npm run combine-reports` to combine mocha json report
 - `npm run generate-report` to generate html report
-
-  <!-- https://hackernoon.com/cypress-io-docker-the-ultimate-e2e-stack-a20ee25654b1 -->
-
-<!-- https://medium.freecodecamp.org/how-to-test-your-frontend-with-the-cypress-io-framework-f048070f4330 -->
-
-<!-- [![Debugging](http://img.youtube.com/vi/H0XScE08hy/0.jpg)](https://www.youtube.com/watch?v=H0XScE08hy8&feature=youtu.be) -->
