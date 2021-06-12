@@ -45,8 +45,8 @@ This framework supports WebUi automation across a variety of browsers like Chrom
 * [Install IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 * [Install docker desktop](https://www.docker.com/products/docker-desktop)
 * [Java JDK_11](https://adoptopenjdk.net/)
-* [Gradle](https://gradle.org/next-steps/?version=6.4&format=bin)
-* [Allure](https://github.com/allure-framework/allure2/archive/2.13.9.zip)    
+* [Gradle](https://gradle.org/next-steps/?version=6.9&format=bin)
+* [Allure](https://github.com/allure-framework/allure2/archive/2.14.0.zip)    
 * Set Environment variables  
 ```bash    
   * JAVA_HOME: Pointing to the Java SDK folder\bin
