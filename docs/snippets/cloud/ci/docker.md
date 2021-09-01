@@ -76,6 +76,11 @@ docker logs [CONTAINER_ID]
 docker logs -f --until=[TIME]
 ```
 
+**Docker compose logs**
+```bash
+docker-compose logs --no-color --tail=1000 [service_name] > logs.txt
+```
+
 TIME can be a TIMESTAMP or relative (e.g. '10m' or '5s')
 
 ## Docker and Github

@@ -26,12 +26,17 @@ title: Dipjyoti Metia
 **Location**: Melbourne, Australia  
 - Working as a Lead Software Engineer in Test.
 - Started by developing [Golang](https://golang.org/) based integration test framework to test [**gRPC**](https://grpc.io/) services and google cloud Spanner database.
-- Working with google cloud pub sub and apache Kafka.
-- Creating github actions script to run tests in CI.
-- Developing End to End testing strategy of a continuous delivery pipeline.
+- Responsible for the development of Test Automation Framework and developing End to End testing strategy for a continuous delivery pipeline.
+- Responsible for testing the core banking services payment, account, transaction, cards developed backed by Golang and in a cloud native environment.
+- Working with google cloud services mainly focusing for kubernetes, cloud pub-sub, cloud function, dataflow pipeline & cloud-run.
+- Creating multiple github actions to run tests in github CI.
+- Created a service virtualization framework with serverless architecture(google cloud function) using ExpressJs.
+- Created live dashboard using dynatrace api and instant notification by slack-bot.
 - Responsible for uplifting the testing capability in google cloud, in a cloud native development environment.
-- Focusing for integrating Integration Test -> Security Test -> Performance Test in a single delivery pipeline.
-- Created a performance testing framework using [K6](https://k6.io/) to test gRPC and rest services.
+- Focusing for shift left the testing System Test -> Security Test -> Performance Test in a single delivery pipeline.
+- Worked on a performance testing framework using [K6](https://k6.io/) to test rest services and [ghz](https://ghz.sh/) to test gRPC services.
+- Worked on a complex event driven microservice architecture consist of [Kafka](https://kafka.apache.org/) and [Apache Beam](https://beam.apache.org/).
+- Worked on a testing framework to test the eventing architecture using the [kafka-go](https://github.com/confluentinc/confluent-kafka-go) and cloud function.
 
 **Software Development Engineer in Test**  
 **Company Name**: BetEasy Pty Ltd(Sportsbet)  
