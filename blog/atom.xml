@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://dipjyotimetia.github.io/blog</id>
+    <title>Hola, welcome to my Tech Blog Blog</title>
+    <updated>2021-07-30T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://dipjyotimetia.github.io/blog"/>
+    <subtitle>Hola, welcome to my Tech Blog Blog</subtitle>
+    <icon>https://dipjyotimetia.github.io/img/pic.jpeg</icon>
+    <entry>
+        <title type="html"><![CDATA[function]]></title>
+        <id>function</id>
+        <link href="https://dipjyotimetia.github.io/blog/function"/>
+        <updated>2021-07-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This blog talked about serverless mocking using cloud function]]></summary>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kafka]]></title>
+        <id>kafka</id>
+        <link href="https://dipjyotimetia.github.io/blog/kafka"/>
+        <updated>2021-04-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This blog talked about kafka using java]]></summary>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Github Eyes]]></title>
+        <id>github</id>
+        <link href="https://dipjyotimetia.github.io/blog/github"/>
+        <updated>2021-01-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is a blog talked about github apis using golang]]></summary>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Serverless Framework]]></title>
+        <id>serverless</id>
+        <link href="https://dipjyotimetia.github.io/blog/serverless"/>
+        <updated>2020-05-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is a blog about serverless framework using nodejs]]></summary>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+</feed>
