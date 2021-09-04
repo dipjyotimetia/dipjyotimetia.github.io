@@ -1,1 +1,0 @@
-(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[7975],{2780:function(a){"use strict";a.exports=JSON.parse('{"allTagsPath":"/blog/tags","slug":"/blog/tags/java","name":"java","count":1,"permalink":"/blog/tags/java"}')}}]);
