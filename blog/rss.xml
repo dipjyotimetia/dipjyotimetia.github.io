@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Hola, welcome to my Tech Blog Blog</title>
+        <link>https://dipjyotimetia.github.io/blog</link>
+        <description>Hola, welcome to my Tech Blog Blog</description>
+        <lastBuildDate>Fri, 30 Jul 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[function]]></title>
+            <link>https://dipjyotimetia.github.io/blog/function</link>
+            <guid>function</guid>
+            <pubDate>Fri, 30 Jul 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[This blog talked about serverless mocking using cloud function]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Kafka]]></title>
+            <link>https://dipjyotimetia.github.io/blog/kafka</link>
+            <guid>kafka</guid>
+            <pubDate>Sat, 17 Apr 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[This blog talked about kafka using java]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Github Eyes]]></title>
+            <link>https://dipjyotimetia.github.io/blog/github</link>
+            <guid>github</guid>
+            <pubDate>Tue, 26 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is a blog talked about github apis using golang]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Serverless Framework]]></title>
+            <link>https://dipjyotimetia.github.io/blog/serverless</link>
+            <guid>serverless</guid>
+            <pubDate>Sat, 16 May 2020 00:00:00 GMT</pubDate>
+            <description><![CDATA[This is a blog about serverless framework using nodejs]]></description>
+        </item>
+    </channel>
+</rss>

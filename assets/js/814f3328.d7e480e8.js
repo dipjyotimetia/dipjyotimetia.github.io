@@ -1,0 +1,1 @@
+(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[2535],{6353:function(e){"use strict";e.exports=JSON.parse('{"title":"Recent posts","items":[{"title":"function","permalink":"/blog/function"},{"title":"Kafka","permalink":"/blog/kafka"},{"title":"Github Eyes","permalink":"/blog/github"},{"title":"Serverless Framework","permalink":"/blog/serverless"}]}')}}]);
