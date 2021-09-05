@@ -4,8 +4,8 @@ title: Get Started
 sidebar_label: Get Started
 ---
 
+### Return two variables
 ```go
-//Return two variables
 package main
 
 import "fmt"
@@ -19,8 +19,9 @@ func main() {
     fmt.Println(a,b)
 }
 ```
+
+### Naked Return
 ```go
-//Naked Return
 
 package main
 
@@ -37,8 +38,8 @@ func main() {
 }
 ```
 
+### var can be used as packages or in functions
 ```go
-// var can be used as packages or in functions
 package main
 
 import "fmt"
@@ -52,8 +53,9 @@ func main() {
 
 ```
 
+### if a initializer is present , type can be omitted
 ```go
-// if a initializer is present , type can be omitted
+
 package main
 
 import "fmt"
@@ -66,8 +68,9 @@ func main() {
 }
 
 ```
+
+### the := the short assignment statement can be used in place of var, inside a function only
 ```go
-// the := the short assignment statement can be used in place of var, inside a function only
 package main
 
 import "fmt"

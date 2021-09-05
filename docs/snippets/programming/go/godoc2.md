@@ -4,6 +4,31 @@ title: Get Little bit deeper
 sidebar_label: Get Little bit deeper
 ---
 
+### Pattern of code calling
+
+golang order of code execution
+import --> const --> var --> init()
+
+```go
+package creature
+
+import (
+    "math/rand"
+    "time"
+)
+
+var creatures = []string{"shark", "jellyfish", "squid", "octopus", "dolphin"}
+
+func init() {
+    rand.Seed(time.Now().UnixNano())
+}
+
+func Random() string {
+    i := rand.Intn(len(creatures))
+    return creatures[i]
+}
+```
+
 ### Simple http test
 
 ```go

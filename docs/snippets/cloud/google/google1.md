@@ -4,43 +4,71 @@ title: Get Started
 sidebar_label: Get Started
 ---
 
-
 ## Example repository
 git clone https://github.com/rosera/pet-theory.git
 
+### Activate project
+
+```bash
+export PROJECT_ID=""
+gcloud config set project $PROJECT_ID
+gcloud config set project $(gcloud projects list --format='value(PROJECT_ID)' --filter='qwiklabs-gcp')
+```
+
 ### Create cloud pubsub topic
-
 ```bash
-gcloud pubsub topics create new-lab-report
+export TOPIC_NAME=""
+export TOPIC_SUBSCRIPTION_NAME=""
+export SERVICE_ACCOUNT_NAME=""
+export SERVICE_URL=""
+#pubsub create topic
+gcloud pubsub topics create $TOPIC_NAME
 #pubsub subscription
-gcloud pubsub subscriptions create email-service-sub --topic new-lab-report --push-endpoint=$EMAIL_SERVICE_URL --push-auth-service-account=pubsub-cloud-run-invoker@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com
-
+gcloud pubsub subscriptions create $TOPIC_SUBSCRIPTION_NAME --topic $TOPIC_NAME --push-endpoint=$SERVICE_URL --push-auth-service-account=$SERVICE_ACCOUNT_NAME@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com
 ```
 
-### Create service account
+### Create service account & add roles
 
 ```bash
-gcloud iam service-accounts create pubsub-cloud-run-invoker --display-name "PubSub Cloud Run Invoker"
+export SERVICE_ACCOUNT_NAME=""
+export SERVICE_NAME=""
+export DISPLAY_NAME=""
+
+gcloud iam service-accounts create $SERVICE_ACCOUNT_NAME --display-name $DISPLAY_NAME
+
+gcloud run services add-iam-policy-binding $SERVICE_NAME --member=serviceAccount:$SERVICE_ACCOUNT_NAME@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com --role=roles/run.invoker --region us-central1 --platform managed
 ```
 
-### Grant access to service account
+### Enable the project to create Pub/Sub authentication tokens
 ```bash
-gcloud run services add-iam-policy-binding email-service --member=serviceAccount:pubsub-cloud-run-invoker@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com --role=roles/run.invoker --region us-central1 --platform managed
-
 PROJECT_NUMBER=$(gcloud projects list --filter="qwiklabs-gcp" --format='value(PROJECT_NUMBER)')
 
-#enable the project to create Pub/Sub authentication tokens.
 gcloud projects add-iam-policy-binding $GOOGLE_CLOUD_PROJECT --member=serviceAccount:service-$PROJECT_NUMBER@gcp-sa-pubsub.iam.gserviceaccount.com --role=roles/iam.serviceAccountTokenCreator
+
+curl -X GET -H "Authorization: Bearer $(gcloud auth print-identity-token)" $SERVICE_URL
 ```
 
-### Deploy script
+### Cloud storage trigger
 ```bash
-export GOOGLE_CLOUD_PROJECT=pet-theory
-export GOOGLE_APPLICATION_CREDENTIALS=pet-theory-credentials.json
+gcloud pubsub subscriptions create $TOPIC_SUBSCRIPTION \
+  --topic $TOPIC_NAME \
+  --push-endpoint=$SERVICE_URL \
+  --push-auth-service-account=$SERVICE_ACCOUNT@$GOOGLE_CLOUD_PROJECT.iam.gserviceaccount.com
+```
+
+### Deploy to container registry
+```bash
+export DOCKER_TAG="rest-api:0.1"
 gcloud builds submit \
-  --tag gcr.io/$GOOGLE_CLOUD_PROJECT/lab-report-service
-gcloud run deploy lab-report-service \
-  --image gcr.io/$GOOGLE_CLOUD_PROJECT/lab-report-service \
+  --tag gcr.io/$GOOGLE_CLOUD_PROJECT/$DOCKER_TAG
+```
+
+### Build and deploy to cloud run
+```bash
+export SERVICE_NAME=""
+export DOCKER_TAG="rest-api:0.1"
+gcloud beta run deploy $SERVICE_NAME \
+  --image gcr.io/$GOOGLE_CLOUD_PROJECT/$DOCKER_TAG \
   --platform managed \
   --region us-central1 \
   --allow-unauthenticated

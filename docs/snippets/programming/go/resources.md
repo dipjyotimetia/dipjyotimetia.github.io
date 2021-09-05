@@ -9,6 +9,7 @@ sidebar_label: Go resources
 * https://gobyexample.com/
 * https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/
 * https://golang.org/doc/effective_go
+* https://www.digitalocean.com/community/tutorial_series/how-to-code-in-go
 
 ### Videos
 * https://www.youtube.com/watch?v=oV9rvDllKEg
