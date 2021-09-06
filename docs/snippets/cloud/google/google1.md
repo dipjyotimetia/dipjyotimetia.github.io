@@ -11,6 +11,7 @@ git clone https://github.com/rosera/pet-theory.git
 
 ```bash
 export PROJECT_ID=""
+gcloud config list project
 gcloud config set project $PROJECT_ID
 gcloud config set project $(gcloud projects list --format='value(PROJECT_ID)' --filter='qwiklabs-gcp')
 ```

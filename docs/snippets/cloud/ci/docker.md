@@ -12,6 +12,26 @@ You do not have to write out the `CONTAINER_ID` in full. The partial `CONTAINER_
 
 :::
 
+### Build docker image with tag
+```bash
+docker build -t node-app:0.1 .
+```
+
+### Docker run and stop
+```bash
+docker run -p 4000:80 --name my-app -d node-app:0.1
+docker ps
+
+docker logs [CONTAINER_ID]
+```
+
+### Docker stop and remove all containers
+```bash
+docker stop my-app && docker rm my-app
+docker stop $(docker ps -q)
+docker rm $(docker ps -aq)
+```
+
 ### Docker login to container
 ``
 docker exec -it <mycontainer> bash    
@@ -30,10 +50,13 @@ docker run -it --entrypoint bash <image>
 ``
   
 ### Docker containers:
-``
+```bash
 docker container ls
+# List all containers
 docker ps
-``
+# Docker container already exited
+docker ps -a 
+```
 ### Docker images:
 ``
 docker images
@@ -60,6 +83,8 @@ docker rm $(docker ps -aq)
 
 ```bash
 docker inspect [CONTAINER_ID]
+
+docker inspect --format='{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' [CONTAINER_ID]
 ```
 
 ### Viewing container logs
