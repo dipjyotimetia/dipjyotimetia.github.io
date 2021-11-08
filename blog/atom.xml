@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://dipjyotimetia.github.io/blog</id>
+    <title>Hola, welcome to my Tech Blog Blog</title>
+    <updated>2021-07-30T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://dipjyotimetia.github.io/blog"/>
+    <subtitle>Hola, welcome to my Tech Blog Blog</subtitle>
+    <icon>https://dipjyotimetia.github.io/img/pic.jpeg</icon>
+    <entry>
+        <title type="html"><![CDATA[function]]></title>
+        <id>function</id>
+        <link href="https://dipjyotimetia.github.io/blog/function"/>
+        <updated>2021-07-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This blog talked about serverless mocking using cloud function]]></summary>
+        <content type="html"><![CDATA[<h2>What is serverless</h2><p>Serverless computing is a method of providing backend services on an as-used basis. A serverless provider allows users to write and deploy code without the hassle of worrying about the underlying infrastructure. code executes in a fully managed environment and no need to provision any infrastructure.</p><h2>Introduction to cloud functions</h2><p>Google Cloud Functions is a serverless execution environment for building and connecting cloud services. With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. Your Cloud Function is triggered when an event being watched is fired. Your code executes in a fully managed environment. There is no need to provision any infrastructure or worry about managing any servers.</p><h2>Functions Framework</h2><p>The Functions Framework lets you write lightweight functions that run in many different environments. <a href="https://github.com/GoogleCloudPlatform/functions-framework">Functions framework</a></p><pre><code class="language-go">package main
+
+import (
+    &quot;github.com/GoogleCloudPlatform/functions-framework-go/funcframework&quot;
+    p &quot;github.com/cloudmock&quot;
+    &quot;golang.org/x/net/context&quot;
+    &quot;log&quot;
+    &quot;os&quot;
+)
+
+func main() {
+    ctx := context.Background()
+    if err := funcframework.RegisterHTTPFunctionContext(ctx, &quot;/&quot;, p.GoMock); err != nil {
+        log.Fatalf(&quot;funcframework.RegisterHTTPFunctionContext: %v\n&quot;, err)
+    }
+    port := &quot;8080&quot;
+    if envPort := os.Getenv(&quot;PORT&quot;); envPort != &quot;&quot; {
+        port = envPort
+    }
+    if err := funcframework.Start(port); err != nil {
+        log.Fatalf(&quot;funcframework.Start: %v\n&quot;, err)
+    }
+}
+
+</code></pre><pre><code class="language-go">package db
+
+import (
+    &quot;context&quot;
+    &quot;fmt&quot;
+    &quot;log&quot;
+    &quot;os&quot;
+    &quot;time&quot;
+
+    &quot;github.com/cloudmock/config&quot;
+    &quot;github.com/cloudmock/secret&quot;
+    &quot;go.mongodb.org/mongo-driver/mongo&quot;
+    &quot;go.mongodb.org/mongo-driver/mongo/options&quot;
+)
+
+const ENV = &quot;ENVIRONMENT&quot;
+
+func NewDatabaseConnection() *mongo.Collection {
+    var err error
+    log.Print(&quot;Connecting to mongodb&quot;)
+    conf, err := config.LoadConfigPath(&quot;config/app&quot;)
+    if err != nil {
+        log.Fatalf(&quot;&quot;)
+    }
+    env := os.Getenv(ENV)
+    var client *mongo.Client
+
+    conn, err := secret.GetSecrets()
+    if err != nil {
+        log.Fatalf(&quot;mongo db secret url failed %v&quot;, err)
+    }
+    if env == &quot;dev&quot; {
+        fmt.Println(&quot;Connecting to localdb&quot;)
+        client, err = mongo.NewClient(options.Client().SetAuth(
+            options.Credential{
+                Username: conf.DBuser,
+                Password: conf.DBpassword,
+            }).ApplyURI(conf.DBurl))
+    } else {
+        client, err = mongo.NewClient(options.Client().ApplyURI(conn))
+    }
+
+    if err != nil {
+        log.Fatalf(&quot;mongo db client failed %v&quot;, err)
+    }
+    ctx, cancel := context.WithTimeout(context.Background(), 10*time.Second)
+    defer cancel()
+    err = client.Connect(ctx)
+    if err != nil {
+        log.Fatalf(&quot;mongo db connection failed %s&quot;, err) //nolint:gocritic
+    }
+    return client.Database(&quot;function&quot;).Collection(&quot;payments&quot;)
+}
+
+</code></pre><pre><code class="language-go">package router
+
+import (
+    &quot;encoding/json&quot;
+    &quot;github.com/brianvoe/gofakeit/v6&quot;
+    &quot;net/http&quot;
+)
+
+type UserDetails struct {
+    Name     string `json:&quot;name&quot;`
+    Email    string `json:&quot;email&quot;`
+    Phone    string `json:&quot;phone&quot;`
+    Address  string `json:&quot;address&quot;`
+    Company  string `json:&quot;company&quot;`
+    JobTitle string `json:&quot;jobTitle&quot;`
+}
+
+func NewUserWrite() *[]UserDetails {
+    var usr []UserDetails
+    for i := 0; i &lt; gofakeit.RandomInt([]int{5, 10, 12, 4, 11}); i++ {
+        usr = append(usr, UserDetails{
+            Name:     gofakeit.Name(),
+            Email:    gofakeit.Email(),
+            Phone:    gofakeit.Phone(),
+            Address:  gofakeit.Address().Address,
+            Company:  gofakeit.Company(),
+            JobTitle: gofakeit.JobTitle(),
+        })
+    }
+    return &amp;usr
+}
+
+func User() func(w http.ResponseWriter, r *http.Request) {
+    return func(w http.ResponseWriter, r *http.Request) {
+        w.Header().Set(&quot;Content-Type&quot;, &quot;application/json&quot;)
+        jData, err := json.Marshal(NewUserWrite())
+        if err != nil {
+            http.Error(w, err.Error(), http.StatusInternalServerError)
+            return
+        }
+        w.WriteHeader(http.StatusOK)
+        w.Write(jData)
+    }
+}
+
+</code></pre><pre><code class="language-go">package p
+
+import (
+    &quot;github.com/cloudmock/router&quot;
+    &quot;github.com/go-chi/chi/v5&quot;
+    &quot;github.com/go-chi/chi/v5/middleware&quot;
+    &quot;github.com/go-chi/httprate&quot;
+    &quot;github.com/rs/cors&quot;
+    &quot;net/http&quot;
+    &quot;time&quot;
+)
+
+func GoMock(w http.ResponseWriter, r *http.Request) {
+    rc := chi.NewRouter()
+    conn := db.NewDatabaseConnection()
+
+    rc.Use(middleware.RealIP)
+    rc.Use(middleware.Logger)
+    rc.Use(httprate.Limit(
+        2,
+        1*time.Second,
+        httprate.WithLimitHandler(func(w http.ResponseWriter, r *http.Request) {
+            http.Error(w, &quot;too many requests&quot;, http.StatusTooManyRequests)
+        }),
+    ))
+
+    rc.Route(&quot;/api/v1&quot;, func(rc chi.Router) {
+        rc.Get(&quot;/users&quot;, router.User())
+        rc.Get(&quot;/categories&quot;, router.Category())
+    })
+
+    cors.Default().Handler(rc).ServeHTTP(w, r)
+}
+
+</code></pre><h3>Deploy cloud function</h3><pre><code class="language-yaml">name: Build and Deploy to CloudFunction
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  deploy:
+    name: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - uses: google-github-actions/setup-gcloud@master
+        with:
+          project_id: ${{ secrets.GCP_PROJECT_ID }}
+          service_account_key: ${{ secrets.gcp_credentials }}
+          export_default_credentials: true
+      - uses: actions/checkout@v2
+      - name: Deploy serverless function
+        run: |
+          gcloud functions deploy &quot;GoMock&quot; \
+            --runtime go113 --trigger-http \
+            --allow-unauthenticated \
+            --region australia-southeast1 \
+            --update-env-vars MONGODB=${{ secrets.mongo_secret }} \
+            --max-instances 2 \
+            --memory 128mb \
+            --service-account=${{ secrets.service_account }} \
+            --no-user-output-enabled
+</code></pre><h2>Why Mocking using cloud function</h2><h2>Use cases of mocking using cloud function</h2><h3>System Testing</h3><h3>Performance testing</h3><p>Performance tests check the behaviors of the system when it is under significant load. These tests are non-functional and can have the various form to understand the reliability, stability, and availability of the platform. For instance, it can be observing response times when executing a high number of requests, or seeing how the system behaves with a significant of data.</p><p><img src="../static/img/blog/K6Result.png" alt="img.png"/>
+<img src="../static/img/blog/function.png" alt="img.png"/></p>]]></content>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Kafka]]></title>
+        <id>kafka</id>
+        <link href="https://dipjyotimetia.github.io/blog/kafka"/>
+        <updated>2021-04-17T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This blog talked about kafka using java]]></summary>
+        <content type="html"><![CDATA[<h2>What is Apache Kafka?</h2><p>Apache Kafka is a framework implementation of a software bus using stream-processing. It is an open-source software platform developed by the Apache Software Foundation written in Scala and Java.
+The project aims to provide a unified, high-throughput, low-latency platform for handling real-time data feeds.
+Behind the scenes, Kafka is distributed, scales well, replicates data across brokers (servers), can survive broker downtime, and much more.
+<img src="../static/img/blog/kafka/kafka_desc.png" alt="img.png"/></p><h2>Topics, Partitions and Offsets</h2><p><strong>Topics: A particular stream of data</strong></p><ul><li>Similar to a table of the database</li><li>You can have as many topics you can</li><li>A topic is identified by its name</li></ul><p><strong>Topics are split in partitions</strong></p><ul><li>Each partition is ordered</li><li>Each message in partition will get an incremental ID called offset</li><li>Partition 0, 1, 2 ....</li><li>Order only guaranteed within a partition, not across partitions</li><li>Data is kept only for a limited time.</li><li>Once the data is written to a partition it cannot be changed.</li></ul><p>Example Scenario :
+You can have multiple cabs, and each cabs reports its GPS location to kafka. You can have a topic cabs_gps that contains
+the position of all cabs. Each cab will send a message to kafka every 20 sec, each message will contain the cabID, and
+the cab location(lat/long)</p><h2>Brokers &amp; Topics</h2><ul><li>A kafka cluster is composed of multiple brokers(servers)</li><li>Each broker is identified by its ID(integer)</li><li>Each broker contains certain topic partitions</li><li>After connecting to any broker(called a bootstrap broker), you will be connected to the entire cluster</li><li>A good number to get start is 3 brokers, but some big clusters have more than 100 brokers</li></ul><p>Example of topic A with 3 partitions<br/>
+<!-- -->Example of topic B with 2 partitions<br/>
+<img src="../static/img/blog/kafka/broker.png" alt="img.png"/></p><h2>Topics replication</h2><ul><li><p>Topics should have a replication factor &gt;1 (Usually between 2 and 3)</p></li><li><p>This way if one broker is down another broker can serve the data. Example of topic A with replication factor 2
+<img src="../static/img/blog/kafka/replication.png" alt="img.png"/></p></li><li><p>At any time only ONE broker can be a leader for a given partition</p></li><li><p>Only that leader can receive and serve data for a partition.</p></li><li><p>The other broker will synchronize the data.</p></li><li><p>So each partition has one leader and multiple ISR (in-sync-replica)
+<img src="../static/img/blog/kafka/replica_leader.png" alt="img.png"/></p></li></ul><h2>Producer</h2><ul><li>Producer write data to topics(which is made of partitions)</li><li>Producer automatically know to which broker and partition to write.</li><li>In case broker failure, Producers will automatically recover
+<img src="../static/img/blog/kafka/producer.png" alt="img.png"/></li><li>Producers can choose to receive acknowledgment of data writes.<ul><li>acks=0 Producer won&#x27;t wait for acknowledgment (Possible data loss)</li><li>acks=1 Producer will wait for leader acknowledgment (Limited data loss)</li><li>acks=2 Leader &amp; Replica acknowledgment (no data loss)</li></ul></li><li>Producer can choose to send a key with the message(string,num etc.)</li><li>If key==null data will sent round robin(broker 101 then 102 then 103)</li><li>If key is sent then all message for that key will send to same partition</li><li>A key is sent if we need a message ordering for a specific field as cabID.</li></ul><pre><code class="language-java" metastring="title=&quot;producer.java&quot;" title="&quot;producer.java&quot;">@Slf4j
+public static void main(String[] args) {
+    String topic = &quot;second-topic&quot;;
+    String value = &quot;hello kafka&quot;;
+    String bootstrapServer = &quot;127.0.0.1:9092&quot;;
+    // Create producer properties
+    Properties properties = new Properties();
+    properties.setProperty(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServer);
+    properties.setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+    properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
+    // Create the producer
+    KafkaProducer&lt;String, String&gt; producer = new KafkaProducer&lt;&gt;(properties);
+    ProducerRecord&lt;String, String&gt; record = new ProducerRecord&lt;&gt;(topic, value);
+    log.info(&quot;Creating producer&quot;);
+    // Send Data
+    producer.send(record, (metadata, e) -&gt; {
+        // Execute every time record is successfully send
+        if (e == null) {
+            log.info((metadata.timestamp()));
+            log.info(topic, metadata.topic());
+            log.info(metadata.hasOffset());
+            log.info(metadata.hasTimestamp());
+        } else {
+            e.printStackTrace();
+        }
+    });
+    producer.flush();
+    producer.close();
+}
+</code></pre><h2>Consumer</h2><ul><li>Consumer read data from a topic(identified by name)</li><li>Consumer knows which broker to read from</li><li>In case of broker failure, consumer know how to recover</li><li>Data is read in order with in each partition
+<img src="../static/img/blog/kafka/consumer.png" alt="img.png"/></li><li>Consumer read data in consumer groups</li><li>Each consumer within a group reads form exclusive partitions</li><li>If you have more consumers than partitions, some consumers will be inactive</li><li>Kafka stores the offset at which a consumer group has been reading</li><li>The offsets committed live in a kafka topic named _consumer_offsets</li><li>When a consumer in a group has processed the data received from kafka, it should be committing the offsets.</li><li>If a consumer dies, it will be able to read back from where it left off.</li></ul><pre><code class="language-java" metastring="title=&quot;consumer.java&quot;" title="&quot;consumer.java&quot;">public static void main(String[] args) {
+
+    String bootstrapServer = &quot;127.0.0.1:9092&quot;;
+    String groupId = &quot;my-sixth-application&quot;;
+    String topic = &quot;second-topic&quot;;
+
+    // Create consumer config
+    Properties properties = new Properties();
+    properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, bootstrapServer);
+    properties.setProperty(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+    properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
+    properties.setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
+    properties.setProperty(ConsumerConfig.AUTO_OFFSET_RESET_CONFIG, &quot;earliest&quot;);
+
+    // Create consumer
+    KafkaConsumer&lt;String, String&gt; consumer = new KafkaConsumer&lt;&gt;(properties);
+
+    // subscribe consumer to our topic
+    consumer.subscribe(Arrays.asList(topic));
+
+    // poll for the new data
+    while (true) {
+        ConsumerRecords&lt;String, String&gt; records =
+                consumer.poll(Duration.ofMillis(100));
+        for (ConsumerRecord&lt;String, String&gt; record : records) {
+            log.info(&quot;Key: &quot; + record.key() + &quot;, Value: &quot; + record.value());
+            log.info(&quot;Partition: &quot; + record.partition() + &quot;, Offset: &quot; + record.offset());
+        }
+    }
+}
+</code></pre><h2>Zookeeper</h2><ul><li>Zookeeper manager brokers(keeps a list of them)</li><li>Zookeeper helps in performing leader election for partition</li><li>Zookeeper send notifications to kafka in case of any changes.</li></ul><h2>Schema Registry</h2><ul><li>Kafka takes bytes as an input and publishes them</li><li>No data verification</li><li>Schema registry rejects bat data</li><li>A common data format must be agreed upon<br/><img src="../static/img/blog/kafka/schema_registry.png" alt="img.png"/></li><li>Apache avro as data format<ul><li>Data is fully typed</li><li>Date is compressed automatically</li><li>Schema comes along with the data</li><li>Documentation is embedded in the schema</li><li>Data can be read across any language</li><li>Schema can be evolved over time in safe manner</li></ul></li></ul><h2>Avro</h2><p>Apache Avro is a data serialization system.</p><ul><li>Avro provides:<ul><li>Rich data structures.</li><li>A compact, fast, binary data format.</li><li>A container file, to store persistent data.</li><li>Remote procedure call (RPC).</li><li>Simple integration with dynamic languages. Code generation is not required to read or write data files nor to use or implement RPC protocols. Code generation as an optional optimization, only worth implementing for statically typed languages.</li></ul></li></ul><pre><code class="language-avroschema">{&quot;namespace&quot;: &quot;dip.avro&quot;,
+  &quot;type&quot;: &quot;record&quot;,
+  &quot;name&quot;: &quot;User&quot;,
+  &quot;fields&quot;: [
+    {&quot;name&quot;: &quot;name&quot;, &quot;type&quot;: &quot;string&quot;},
+    {&quot;name&quot;: &quot;favorite_number&quot;,  &quot;type&quot;: [&quot;int&quot;, &quot;null&quot;]},
+    {&quot;name&quot;: &quot;favorite_color&quot;, &quot;type&quot;: [&quot;string&quot;, &quot;null&quot;]}
+  ]
+}
+</code></pre><ul><li>Common Fields:<ul><li>Name: Name of the schema</li><li>Namespace: (equivalent of package in java)</li><li>Doc: Documentation to explain your schema</li><li>Aliases: Optional other name for schema</li><li>Fields<ul><li>Name: Name of field</li><li>Doc: Documentation for that field</li><li>Type: Data type for that field</li><li>Default: Default value for that field</li></ul></li><li>Complex types:<ul><li>Enums<pre><code class="language-avroschema">{
+  &quot;type&quot;: &quot;enum&quot;,
+  &quot;name&quot;: &quot;Customer Status&quot;,
+  &quot;symbols&quot;: [&quot;BRONZE&quot;,&quot;SILVER&quot;,&quot;GOLD&quot;]
+}
+</code></pre></li><li>Arrays<pre><code class="language-avroschema">{
+  &quot;type&quot;: &quot;array&quot;,
+  &quot;items&quot;: &quot;string&quot;
+}
+</code></pre></li><li>Maps<pre><code class="language-avroschema">{
+  &quot;type&quot;: &quot;map&quot;,
+  &quot;values&quot;: &quot;string&quot;
+}
+</code></pre></li><li>Unions<pre><code class="language-avroschema">{
+  &quot;name&quot;: &quot;middle_name&quot;,
+  &quot;type&quot;: [
+    &quot;null&quot;,
+    &quot;string&quot;
+  ],
+  &quot;default&quot;: &quot;null&quot;
+}
+</code></pre></li><li>Calling other schema as type</li></ul></li></ul></li></ul><h2>Kafka Rest Proxy</h2><ul><li>kafka is great for java based consumers/producers</li><li>Avro support for some languages isn&#x27;t great, where JSON/HTTP requests are great.</li><li>Reporting data to Kafka from any frontend app built in any language not supported by official Confluent clients</li><li>Ingesting messages into a stream processing framework that doesn’t yet support Kafka<br/><img src="../static/img/blog/kafka/restproxy.png" alt="img.png"/></li><li>Perform a comprehensive set of administrative operations through REST APIs, including:<ul><li>Describe, list, and configure brokers</li><li>Create, delete, describe, list, and configure topics</li><li>Delete, describe, and list consumer groups</li><li>Create, delete, describe, and list ACLs</li><li>List partition reassignments</li></ul></li></ul>]]></content>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Github Eyes]]></title>
+        <id>github</id>
+        <link href="https://dipjyotimetia.github.io/blog/github"/>
+        <updated>2021-01-26T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is a blog talked about github apis using golang]]></summary>
+        <content type="html"><![CDATA[<p>Presenting github eyes, a golang implementation of the github rest apis using <a href="https://github.com/google/go-github">Google GitHub</a> sdk to interact with the <a href="https://docs.github.com/en/rest">Github Api</a>, using github apis we can crawl over multiple repository and automate different tasks from creating repo, creating labels, adding milestones, get latest commits, updating workflows, get the project build status etc, below is the basic demonstration of getting list of issues from multiple repos. </p><p><img src="../static/img/blog/gogithub.png" alt="image"/></p><p>The go-github library does not directly handle authentication. The easiest and recommended way to do this is using the OAuth2 library, If you have an OAuth2 access token (for example, a personal API token), you can use it with the OAuth2 library.
+To get the personal api token follow the <a href="https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token">documentation</a> and
+Below is the code snippet for authentication using <a href="https://github.com/golang/oauth2">oauth2</a>.</p><pre><code class="language-go" metastring="title=&quot;auth.go&quot;" title="&quot;auth.go&quot;">package github
+
+import (
+    &quot;context&quot;
+
+    &quot;github.com/google/go-github/v33/github&quot;
+    &quot;golang.org/x/oauth2&quot;
+)
+
+AUthenticating using github access token
+// AuthGithubAPI authentication of github api
+func AuthGithubAPI(ctx context.Context) *github.Client {
+    ts := oauth2.StaticTokenSource(
+        &amp;oauth2.Token{AccessToken: &quot;XXXXXXXXXXXXXXXXXXXXXXX&quot;},
+    )
+    tc := oauth2.NewClient(ctx, ts)
+    return github.NewClient(tc)
+}
+</code></pre><p>Getting the list of issues in a repository, here we have created a struct named <code>Issues</code> with the required fields and then created a function <code>ListIssues</code> where we are passing the github api authentication and then <code>client.Issues.ListByRepo</code> is doing the job where underneath its calling <a href="https://docs.github.com/en/free-pro-team@latest/rest/reference/issues/#list-repository-issues">Github Issues Api</a>.<br/>
+<!-- -->We can also extend this function by adding filters to get open/closed issues and so on.</p><pre><code class="language-go" metastring="title=&quot;issues.go&quot;" title="&quot;issues.go&quot;">package github
+
+import (
+    &quot;context&quot;
+    &quot;log&quot;
+    &quot;time&quot;
+)
+
+type Issues struct {
+    ID        int64
+    Title     string
+    State     string
+    CreatedAt time.Time
+    URL       string
+}
+
+// ListIssues get list of issues
+func ListIssues(repos string) interface{}{
+    ctx := context.Background()
+    client := AuthGithubAPI(ctx)
+    issues, _, err := client.Issues.ListByRepo(ctx, &quot;dipjyotimetia&quot;, repos, nil)
+    if err != nil {
+        log.Println(err)
+    }
+
+    var issueList []interface{}
+    for _, v := range issues {
+        issueList = append(issueList,&amp;Issues{
+            ID:        v.GetID(),
+            Title:     v.GetTitle(),
+            State:     v.GetState(),
+            CreatedAt: v.GetCreatedAt(),
+            URL:       v.GetHTMLURL(),
+        })
+    }
+    return issueList
+}
+</code></pre><p>Main function to drive the show, here we are passing the repo names in an array called <code>repoNames</code> and in a loop calling the the function derived above <code>ListIssues</code> and then generating the result in a json file in local path.</p><pre><code class="language-go" metastring="title=&quot;main.go&quot;" title="&quot;main.go&quot;">package main
+
+import (
+    &quot;encoding/json&quot;
+    &quot;github.com/goutils/pkg/github&quot;
+    &quot;io/ioutil&quot;
+)
+
+func main() {
+    repoNames := []string{&quot;HybridTestFramewrok&quot;, &quot;MobileTestFramework&quot;}
+    var result []interface{}
+    for _, repoName := range repoNames {
+        result = append(result, repoName, github.ListIssues(repoName))
+    }
+
+    file, _ := json.MarshalIndent(result, &quot;&quot;, &quot;&quot;)
+    _ = ioutil.WriteFile(&quot;test.json&quot;, file, 0644)
+}
+
+</code></pre><p>Example of the exported json data of the <code>ListIssues</code> function for the two repos.</p><pre><code class="language-json">[
+  &quot;HybridTestFramewrok&quot;,
+  [
+    {
+      &quot;ID&quot;: 690950907,
+      &quot;Title&quot;: &quot;Add reddis tests support&quot;,
+      &quot;State&quot;: &quot;open&quot;,
+      &quot;CreatedAt&quot;: &quot;2020-09-02T11:42:07Z&quot;,
+      &quot;URL&quot;: &quot;https://github.com/dipjyotimetia/HybridTestFramewrok/issues/65&quot;
+    },
+    {
+      &quot;ID&quot;: 690950833,
+      &quot;Title&quot;: &quot;Add ssh login builder&quot;,
+      &quot;State&quot;: &quot;open&quot;,
+      &quot;CreatedAt&quot;: &quot;2020-09-02T11:42:01Z&quot;,
+      &quot;URL&quot;: &quot;https://github.com/dipjyotimetia/HybridTestFramewrok/issues/64&quot;
+    },
+    {
+      &quot;ID&quot;: 690950781,
+      &quot;Title&quot;: &quot;Add file reader validations&quot;,
+      &quot;State&quot;: &quot;open&quot;,
+      &quot;CreatedAt&quot;: &quot;2020-09-02T11:41:55Z&quot;,
+      &quot;URL&quot;: &quot;https://github.com/dipjyotimetia/HybridTestFramewrok/issues/63&quot;
+    },
+    {
+      &quot;ID&quot;: 690950708,
+      &quot;Title&quot;: &quot;add kafka testing&quot;,
+      &quot;State&quot;: &quot;open&quot;,
+      &quot;CreatedAt&quot;: &quot;2020-09-02T11:41:48Z&quot;,
+      &quot;URL&quot;: &quot;https://github.com/dipjyotimetia/HybridTestFramewrok/issues/62&quot;
+    },
+    {
+      &quot;ID&quot;: 690950641,
+      &quot;Title&quot;: &quot;add rabitmq testing support&quot;,
+      &quot;State&quot;: &quot;open&quot;,
+      &quot;CreatedAt&quot;: &quot;2020-09-02T11:41:43Z&quot;,
+      &quot;URL&quot;: &quot;https://github.com/dipjyotimetia/HybridTestFramewrok/issues/61&quot;
+    }
+  ],
+  &quot;MobileTestFramework&quot;,
+  [
+    {
+      &quot;ID&quot;: 793821012,
+      &quot;Title&quot;: &quot;Add AWS Device Farm support&quot;,
+      &quot;State&quot;: &quot;open&quot;,
+      &quot;CreatedAt&quot;: &quot;2021-01-26T00:19:55Z&quot;,
+      &quot;URL&quot;: &quot;https://github.com/dipjyotimetia/MobileTestFramework/issues/88&quot;
+    }
+  ]
+]
+</code></pre><p>Project structure<br/>
+<img src="../static/img/blog/gogithubstruct.png" alt="image"/></p>]]></content>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Serverless Framework]]></title>
+        <id>serverless</id>
+        <link href="https://dipjyotimetia.github.io/blog/serverless"/>
+        <updated>2020-05-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[This is a blog about serverless framework using nodejs]]></summary>
+        <content type="html"><![CDATA[<p><img src="https://raw.githubusercontent.com/Develop-X/Serverless/master/ServerlessFramework.png" alt="alt text"/></p><h3><a href="https://serverless.com/framework/docs/providers/aws/guide/quick-start/">Where to start?</a></h3><p><code>npm install -g serverless</code></p><p><img src="https://raw.githubusercontent.com/Develop-X/Serverless/master/serverless.png" alt="alt text"/></p><ul><li><p><a href="https://serverless.com/framework/docs/providers/aws/guide/iam/">Create IAM user</a></p></li><li><p>Setup user access<br/>
+<!-- -->serverless config credentials --provider aws --key xxxxxxxxxxxxxx --secret xxxxxxxxxxxxxx</p></li><li><p>Create project<br/>
+<!-- -->serverless create --template aws-nodejs --path my-service</p></li><li><p><a href="https://serverless.com/framework/docs/providers/aws/guide/serverless.yml/">Serverless yml</a>  </p></li><li><p>Serverless Deploy<br/>
+<code>serverless deploy -v</code></p></li></ul><p><img src="https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessdeploy.png" alt="alt text"/></p><h3>Serverless offline</h3><p><a href="https://github.com/dherault/serverless-offline">https://github.com/dherault/serverless-offline</a></p><pre><code class="language-bash">serverless plugin install --name serverless-offline
+serverless offline start
+</code></pre><p><img src="https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessOffline.png" alt="alt text"/></p><h3>Insomnia</h3><p><img src="https://raw.githubusercontent.com/Develop-X/Serverless/master/serverlessMongo.png" alt="alt text"/></p><h3>Serverless <a href="https://app.dashbird.io/">dashbird</a></h3><h3>Mongodb</h3><p><img src="https://raw.githubusercontent.com/Develop-X/Serverless/master/mongodb.png" alt="alt text"/></p><pre><code class="language-bash">$ npm init -y
+$ npm i --save-dev serverless-offline
+$ npm i --save mongoose dotenv
+sls offline start --skipCacheInvalidation
+</code></pre>]]></content>
+        <author>
+            <name>Dipjyoti Metia</name>
+            <uri>https://github.com/dipjyotimetia</uri>
+        </author>
+    </entry>
+</feed>
