@@ -40,6 +40,7 @@ module.exports = {
           AZURE:['snippets/cloud/azure/azure1'],
           CI:[
             'snippets/cloud/ci/docker',
+            'snippets/cloud/ci/kubernetes',
             'snippets/cloud/ci/jenkins',
           ],
         }

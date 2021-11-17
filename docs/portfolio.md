@@ -39,7 +39,7 @@ title: Dipjyoti Metia
 - Worked on a testing framework to test the eventing architecture using the [kafka-go](https://github.com/confluentinc/confluent-kafka-go) and cloud function.
 
 **Software Development Engineer in Test**  
-**Company Name**: BetEasy Pty Ltd(Sportsbet)  
+**Company Name**: BetEasy Pty Ltd(SportsBet)  
 **Dates Employed**: April 2018 – May 2020  
 **Location**: Melbourne, Australia  
 - Working as a Software Development Engineer in Test
