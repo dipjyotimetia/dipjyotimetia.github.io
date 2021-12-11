@@ -2482,7 +2482,7 @@
     react-json-view "^1.21.3"
     tslib "^2.3.1"
 
-"@docusaurus/plugin-google-analytics@2.0.0-beta.13", "@docusaurus/plugin-google-analytics@^2.0.0-beta.13":
+"@docusaurus/plugin-google-analytics@2.0.0-beta.13":
   version "2.0.0-beta.13"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-google-analytics/-/plugin-google-analytics-2.0.0-beta.13.tgz#4f1eea13c32fa3ccc84b865eaafe988f36d4d95b"
   integrity sha512-I37v2aWq43EXVScSOrYqP6PtHNVWar9OJ4Pbgwx1GNAy2VTyAQMoD8cLOCm6LVsEPxzIj+JsvGHrMlzaXZ3WIQ==
@@ -2591,7 +2591,7 @@
     prism-react-renderer "^1.2.1"
     react-live "2.2.3"
 
-"@docusaurus/theme-search-algolia@2.0.0-beta.13", "@docusaurus/theme-search-algolia@^2.0.0-beta.13":
+"@docusaurus/theme-search-algolia@2.0.0-beta.13":
   version "2.0.0-beta.13"
   resolved "https://registry.yarnpkg.com/@docusaurus/theme-search-algolia/-/theme-search-algolia-2.0.0-beta.13.tgz#095c8ffbe1120c2a6f564e8e0fd9418dba2df267"
   integrity sha512-/+jiRQvuG85iWlOsprQd/1OGUifwN8t9WMlPA6TjAcUoycFdra73P/1RHZzMjuUd8CV0VbzaD+wLCryMdf5lIw==
@@ -2751,6 +2751,11 @@
   version "1.0.0-next.15"
   resolved "https://registry.npmjs.org/@polka/url/-/url-1.0.0-next.15.tgz"
   integrity sha512-15spi3V28QdevleWBNXE4pIls3nFZmBbUGrW9IVPwiQczuSb9n76TCB4bsk8TSel+I1OkHEdPhu5QKMfY6rQHA==
+
+"@saucelabs/theme-github-codeblock@0.1.1":
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/@saucelabs/theme-github-codeblock/-/theme-github-codeblock-0.1.1.tgz#d2caa3fbf56c38ae2fe974871f1188226bb57d92"
+  integrity sha512-iHzODYjcUAYI4eJzLrNCw/Iq9SWxCKB/cMgEKHjRmNMb2NKch1dsI2ZSCg8lNedIPmOaRfqHT29hLyMoc/5Wpg==
 
 "@sideway/address@^4.1.0":
   version "4.1.2"

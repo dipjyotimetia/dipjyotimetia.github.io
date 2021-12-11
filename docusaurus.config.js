@@ -8,6 +8,9 @@ module.exports = {
   favicon: 'img/pic.jpeg',
   organizationName: 'dipjyotimetia',
   projectName: 'dipjyotimetia.github.io',
+  themes: [
+    '@saucelabs/theme-github-codeblock'
+  ],
   themeConfig: {
     navbar: {
       title: 'Dipjyoti`s Blog',
