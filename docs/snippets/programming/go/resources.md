@@ -5,6 +5,7 @@ sidebar_label: Go resources
 ---
 
 ### Tutorial
+* https://mehdihadeli.github.io/awesome-go-education/
 * https://go-course.org/gocourse-2019-05-melbourne.slide#39
 * https://gobyexample.com/
 * https://astaxie.gitbooks.io/build-web-application-with-golang/content/en/
