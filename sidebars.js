@@ -35,7 +35,22 @@ module.exports = {
       label: 'Cloud',
       items: [
         {
-          AWS:['snippets/cloud/aws/aws1'],
+          AWS:[
+            'snippets/cloud/aws/aws1',
+            'snippets/cloud/aws/aws2',
+            'snippets/cloud/aws/aws3',
+            'snippets/cloud/aws/aws4',
+            'snippets/cloud/aws/aws5',
+            'snippets/cloud/aws/aws6',
+            'snippets/cloud/aws/aws7',
+            'snippets/cloud/aws/aws8',
+            'snippets/cloud/aws/aws9',
+            'snippets/cloud/aws/aws10',
+            'snippets/cloud/aws/aws11',
+            'snippets/cloud/aws/aws12',
+            'snippets/cloud/aws/aws13',
+            'snippets/cloud/aws/aws14',
+          ],
           GOOGLE:[
             'snippets/cloud/google/google1',
             'snippets/cloud/google/gke',
@@ -44,7 +59,6 @@ module.exports = {
             'snippets/cloud/google/appengine',
             'snippets/cloud/google/storage',
           ],
-          AZURE:['snippets/cloud/azure/azure1'],
           CI:[
             'snippets/cloud/ci/docker',
             'snippets/cloud/ci/kubernetes',
