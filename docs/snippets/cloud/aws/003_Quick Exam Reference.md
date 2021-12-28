@@ -311,8 +311,6 @@ Pricing models:
 **\*Know how to create a VPC from memory for exam!\***
 -   When creating an AMI, on Step 4(Add storage) “Delete on Termination” is checked and not encrypted by default (i.e. Termination protection is turned off by default):
 
-![Image01](/images/060116_1515_AWSCertifie1.png?raw=true)
-
 -   On an EBS-backed instance, the default action is for the root EBS vol to be deleted when the instance is terminated.
 -   Root volumes cannot be encrypted by default, you’ll need a 3<sup>rd</sup> party tool (bit locker, etc) to encrypt root vols.
 
@@ -380,7 +378,6 @@ mount
     -   Launch permissions that control with AWS accounts can use the AMI to launch instances
     -   Block device mapping that specifies which volumes to attach when launching instance
 -   By default, any AMI you create is private. You can modify image permission to make it public.
--   ![Image02](/images/060116_1515_AWSCertifie2.png?raw=true)
 -   **Read these articles on how to harden & clean up an AMI before making public!**
     -   <https://aws.amazon.com/articles/9001172542712674>
     -   <http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/building-shared-amis.html>
@@ -437,7 +434,6 @@ mount
     -   *Aws s3 help*
         -   Make Bucket = mb
         -   Remove Bucket = rb
-![Image01](/images/060116_1515_AWSCertifie3.png?raw=true)
 -   If you use roles, you don’t have to store your credentials on your EC2 instance (which is a security risk)
 
 **IAM – Roles**
@@ -468,7 +464,6 @@ mount
     -   *Chkconfig httpd on*
 -   Provision an AWS AMI instance per usual, but in the advanced section put in the above script
 
-![Image04](/images/060116_1515_AWSCertifie4.png?raw=true)
 
 **Instance Metadata –**
 -   How to access instance metadata from within an EC2 instance. From CLI:
@@ -479,7 +474,6 @@ mount
             -   Trigger a lambda function to update DNS
             -   Whatever else you can think of 
 
-![Image05](/images/060116_1515_AWSCertifie5.png?raw=true)
 
 **Auto scaling Groups**
 -   Have to have a launch configuration to have an auto scaling group
@@ -761,11 +755,9 @@ mount
     -   Need to attach IGW after you create it
 -   Need to create InternetRouteTable if you want VPC to communicate in/out 
 
-![Image06](/images/060116_1515_AWSCertifie6.png?raw=true)
 
 -   Once you’ve created your IGW, any subnet associations you make to it will be internet accessible:
 
-![Image06](/images/060116_1515_AWSCertifie6.png?raw=true)
 
 -   A security group can stretch across multiple Regions/AZs where a subnet cannot
 
@@ -1014,8 +1006,6 @@ Compliance**: <http://d0.awsstatic.com/whitepapers/compliance/AWS_Risk_and_Compl
 -   Motion Picture Association of America (MPAA)
 
 AWS Platform:
-
-![Image08](/images/060116_1515_AWSCertifie8.png?raw=true)
 
 **Storage Options in the Cloud: (2 docs?)**
 
