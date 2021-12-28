@@ -45,7 +45,6 @@ module.exports = {
             'snippets/cloud/aws/aws7',
             'snippets/cloud/aws/aws8',
             'snippets/cloud/aws/aws9',
-            'snippets/cloud/aws/aws10',
             'snippets/cloud/aws/aws11',
             'snippets/cloud/aws/aws12',
             'snippets/cloud/aws/aws13',
