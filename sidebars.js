@@ -36,7 +36,14 @@ module.exports = {
       items: [
         {
           AWS:['snippets/cloud/aws/aws1'],
-          GOOGLE:['snippets/cloud/google/google1'],
+          GOOGLE:[
+            'snippets/cloud/google/google1',
+            'snippets/cloud/google/gke',
+            'snippets/cloud/google/cr',
+            'snippets/cloud/google/cf',
+            'snippets/cloud/google/appengine',
+            'snippets/cloud/google/storage',
+          ],
           AZURE:['snippets/cloud/azure/azure1'],
           CI:[
             'snippets/cloud/ci/docker',

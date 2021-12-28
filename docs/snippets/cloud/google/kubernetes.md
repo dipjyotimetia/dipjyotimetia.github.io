@@ -1,5 +1,5 @@
 ---
-id: kubectl
+id: gke
 title: Google Kubernetes Engine
 sidebar_label: Google Kubernetes Engine
 ---
