@@ -4,9 +4,7 @@ title: Google Kubernetes Engine
 sidebar_label: Google Kubernetes Engine
 ---
 
-Kubernetes is a container orchestration tool
-Helps manage multiple container, nodes and pods
-Provided services like health checks, scheduling and scaling
+Kubernetes is a container orchestration tool, helps manage multiple container, nodes and pods, provided services like health checks, scheduling and scaling
 
 
 ### Google Kubernetes Engine

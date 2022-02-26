@@ -4,8 +4,11 @@ title: Get Started
 sidebar_label: Get Started
 ---
 
+## Google cloud sketch
+[SketchNotes](https://thecloudgirl.dev/)   
+
 ## Example repository
-git clone https://github.com/rosera/pet-theory.git
+[GitHub](https://github.com/rosera/pet-theory.git)
 
 ### Activate project
 

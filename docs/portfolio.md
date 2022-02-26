@@ -25,18 +25,20 @@ title: Dipjyoti Metia
 **Dates Employed**: May 2020 - Present  
 **Location**: Melbourne, Australia  
 - Working as a Lead Software Engineer in Test.
-- Started by developing [Golang](https://golang.org/) based integration test framework to test [**gRPC**](https://grpc.io/) services and google cloud Spanner database.
+- Started by developing [Golang](https://golang.org/) based integration test framework to test [**gRPC**](https://grpc.io/) and REST services.
 - Responsible for the development of Test Automation Framework and developing End to End testing strategy for a continuous delivery pipeline.
-- Responsible for testing the core banking services payment, account, transaction, cards developed backed by Golang and in a cloud native environment.
+- Responsible for testing the core banking services Payment, Account, Transaction, Cards etc developed and backed by Golang and in a cloud native environment.
 - Working with google cloud services mainly focusing for kubernetes, cloud pub-sub, cloud function, dataflow pipeline & cloud-run.
-- Creating multiple github actions to run tests in github CI.
-- Created a service virtualization framework with serverless architecture(google cloud function) using ExpressJs.
-- Created live dashboard using dynatrace api and instant notification by slack-bot.
-- Responsible for uplifting the testing capability in google cloud, in a cloud native development environment.
+- Creating multiple jobs to run a hourly shakeout tests in parallel and throw notification for any failure and tag person to fix the issues using slack apis and github-actions.
+- Responsible for uplifting the testing capability across multiple feature teams in a cloud native development environment.
 - Focusing for shift left the testing System Test -> Security Test -> Performance Test in a single delivery pipeline.
 - Worked on a performance testing framework using [K6](https://k6.io/) to test rest services and [ghz](https://ghz.sh/) to test gRPC services.
-- Worked on a complex event driven microservice architecture consist of [Kafka](https://kafka.apache.org/) and [Apache Beam](https://beam.apache.org/).
+- Contributed in the End To End performance testing framework developed with [Locust](https://locust.io/) to deploy and test the core banking user journeys in kubernetes and send the matrics to the influxdba and therefore to the grafana dashboard.
+- Developed a service virtualization framework using ExpressJs framework and backed by a serverless framework using google cloud function to mock/stub the entire downstream services to perform system testing and performance testing.  
+- Worked on a complex event driven microservice architecture consist of [Kafka](https://kafka.apache.org/) and google cloud pub/sub with realtime streaming services like google dataflow pipeline to injest data from kafka and process it.
 - Worked on a testing framework to test the eventing architecture using the [kafka-go](https://github.com/confluentinc/confluent-kafka-go) and cloud function.
+- Worked on developing a command line application using golang and cobra to provide a single solution to generate multiple authentication tokens required during testing across test environments and providing a streamline way to get multiple test data details. 
+- Paired up with the SRE team and creating monitoring dashboards in google cloud monitoring and splunk to monitor the performance of the services and the system health, setup the alerting with predefined SLI(Service level indicator) to throw notifications using slack-bot.
 
 **Software Development Engineer in Test**  
 **Company Name**: BetEasy Pty Ltd(SportsBet)  
