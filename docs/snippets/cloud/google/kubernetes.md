@@ -39,3 +39,8 @@ Kubernetes is a container orchestration tool, helps manage multiple container, n
 2. `gcloud container node-pools list --cluster=cluster-1`
 3. `gcloud container clusters resize node-pools resize pool-1 --node-pool pool1 --num-nodes-2`
 4. `gcloud container node-pools delete pool-1 --cluster=cluster-1`
+
+### Kubectl Cheet sheet
+
+https://kubernetes.io/docs/reference/kubectl/cheatsheet/
+https://www.bluematador.com/learn/kubectl-cheatsheet
