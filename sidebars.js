@@ -23,7 +23,11 @@ module.exports = {
       label: 'Programming',
       items: [
         {
-          GO:['snippets/programming/go/godoc1'],
+          GO:[
+            'snippets/programming/go/godoc1',
+            'snippets/programming/go/godoc2',
+            'snippets/programming/go/godoc3'
+          ],
           Java:['snippets/programming/java/java1'],
           React:['snippets/programming/react/react1'],
           Python:['snippets/programming/python/python1'],
