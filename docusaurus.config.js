@@ -9,7 +9,7 @@ module.exports = {
   organizationName: 'dipjyotimetia',
   projectName: 'dipjyotimetia.github.io',
   themes: [
-    '@saucelabs/theme-github-codeblock'
+    '@docusaurus/theme-live-codeblock'
   ],
   themeConfig: {
     navbar: {
@@ -109,6 +109,15 @@ module.exports = {
         },
       ],
       copyright: `Copyright © ${new Date().getFullYear()} Dipjyoti Metia`,
+    },
+    themeConfig: {
+      liveCodeBlock: {
+        /**
+         * The position of the live playground, above or under the editor
+         * Possible values: "top" | "bottom"
+         */
+        playgroundPosition: 'bottom',
+      },
     },
   },
   presets: [
