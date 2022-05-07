@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[5838],{3553:function(l){l.exports=JSON.parse('{"label":"cloud function","permalink":"/blog/tags/cloud-function","allTagsPath":"/blog/tags","count":1}')}}]);

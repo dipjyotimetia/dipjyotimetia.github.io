@@ -1,1 +1,0 @@
-"use strict";(self.webpackChunktech_blog=self.webpackChunktech_blog||[]).push([[7434],{394:function(a){a.exports=JSON.parse('{"allTagsPath":"/blog/tags","name":"kafka","count":1,"permalink":"/blog/tags/kafka"}')}}]);
