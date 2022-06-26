@@ -17,8 +17,8 @@ sidebar_label: Cloud Native Design
 
 * Loosely coupled asynchronous application
 * Graceful shutdown
-    * The pod switches to terminating state and stops receiving any new traffic
-    * preStop hook that is a special command or HTTP request is executed
-    * SIGTERM signal is sent to the pod
-    * Kubernetes wait for the pod to stop
-    * SIGKILL signal is sent to the pod and the pod is removed    
+  * The pod switches to terminating state and stops receiving any new traffic
+  * preStop hook that is a special command or HTTP request is executed
+  * SIGTERM signal is sent to the pod
+  * Kubernetes wait for the pod to stop
+  * SIGKILL signal is sent to the pod and the pod is removed    

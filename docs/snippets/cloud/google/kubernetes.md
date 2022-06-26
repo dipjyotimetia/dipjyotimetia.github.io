@@ -44,3 +44,4 @@ Kubernetes is a container orchestration tool, helps manage multiple container, n
 
 https://kubernetes.io/docs/reference/kubectl/cheatsheet/
 https://www.bluematador.com/learn/kubectl-cheatsheet
+https://github.com/dgkanatsios/CKAD-exercises

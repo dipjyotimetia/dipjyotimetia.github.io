@@ -64,6 +64,7 @@ module.exports = {
             'snippets/cloud/google/cf',
             'snippets/cloud/google/appengine',
             'snippets/cloud/google/storage',
+            'snippets/cloud/google/casestudies',
           ],
           CI:[
             'snippets/cloud/ci/docker',
@@ -85,6 +86,10 @@ module.exports = {
       label: 'Performance',
       items: [
         'snippets/performance/taurus',
+        // 'snippets/performance/k6',
+        // 'snippets/performance/ghz',
+        // 'snippets/performance/gatling',
+        // 'snippets/performance/locust',
       ]
     },
     {
