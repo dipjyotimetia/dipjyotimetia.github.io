@@ -4,28 +4,86 @@ title: Get Started with bash
 sidebar_label: Get Started
 ---
 
-https://devhints.io/bash
+<https://devhints.io/bash>
 
 ## Adding permissions
+
 Make a shell script executable by the user/owner
+
 ```bash
 chmod u+x deploy.sh # You can then execute it like this: ./deploy.sh
 chmod 444 file # - Allow read permission to owner and group and world
 chmod 777 file # - Allow everyone to read, write, and execute file
+
+The command used to change permissions is chmod
+```bash
+chmod g+w hello.txt
 ```
 
+Here, I am adding (+) the permission to write (w) for the group (g) users.
+
+Similarly, if I want to remove the read permission for anyone outside the group, then:
 
 ```bash
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -d "{\"id\": 12}" \
-  $SERVICE_URL &
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -d "{\"id\": 34}" \
-  $SERVICE_URL &
-curl -X POST \
-  -H "Content-Type: application/json" \
-  -d "{\"id\": 56}" \
-  $SERVICE_URL &
+chmod o-r hello.txt
 ```
+
+Here, I am removing (-) the permission to read (r) for the others (o)
+
+Create a file
+
+```bash
+touch hello.txt
+```
+
+Read and stream a file
+tail command is similar to cat in a way that it lets you read a file.
+
+But unlike cat you can define how you want to view it.
+
+For e.g. if you want to see only the last 100 lines of a log file (log files contain thousands of lines of text) you can use the following command
+
+```bash
+tail -n100 log_filename
+```
+
+An added advantage of tail command is that you can use it to stream a file as well
+
+```bash
+tail -f filename
+```
+
+This command will give you a streaming output that keeps updating as the log file is updated.
+
+Filtering the output of a command
+The above commands to read through a file can produce hundreds of lines of output. But that will make it difficult for you to go through them.
+
+You can filter out the output so any line that contains a substring you want to see will be shown in the output.
+
+Let me introduce you to pipe in unix. A pipe is used to send the output of a certain command to a different command. A pipe is represented by | .
+
+grep is the command you use to filter out an output. If you pass the output of tail to the grep command via a pipe, that should do the trick of filtering lines.
+
+Let’s say you only want to view only the lines in a file that contain the word gunicorn in it then this is how you do it
+
+```bash
+tail -n100 log_filename | grep 'gunicorn'
+```
+
+A much more powerful tool for filtering is awk
+
+awk follows the pattern
+
+```bash
+awk options 'selection _criteria {action }' input-file
+```
+
+An example of awk command is like this
+
+```bash
+awk '/gunicorn/ { print $1 }' log_filename
+```
+
+Here, the command will print out the first word (indicated by $1) of lines that contain the word “gunicorn”
+More info <https://linuxize.com/post/awk-command/>
+

@@ -104,6 +104,7 @@ module.exports = {
       label: 'OS & Tools',
       items: [
         'snippets/toolos/ubuntu',
+        'snippets/toolos/bash',
       ]
     },
     'snippets/generic',

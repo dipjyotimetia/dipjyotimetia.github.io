@@ -19,3 +19,8 @@ App engine can be used to do canary deployment and split traffic to do the AB te
 ![image](../../static/img/../../../../static/img/assets/gcloud/appengine_2.png)
 
 App Engine standard environments is option for applications with spiky or very low traffic with app engine standard apis.
+
+Difference between app engine flexible and standard
+
+App engine Flexible gives all the technological capabilities with the only bound of using containers
+

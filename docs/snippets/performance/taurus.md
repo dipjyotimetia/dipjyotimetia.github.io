@@ -4,8 +4,8 @@ title: Taurus
 sidebar_label: Taurus
 ---
 
- ### Taurus install linux
- 
+### Taurus install linux
+
  ```bash
  sudo yum install java-1.8.0  
  sudo yum remove java-1.7.0-openjdk  
@@ -15,11 +15,13 @@ sidebar_label: Taurus
 ```
 
 ### Docker command
+
 ```bash
 docker run --rm -v C:\ccviews\taurus:/bzt-configs -v C:\ccviews\taurus\artifact:/tmp/artifacts blazemeter/taurus taurus_execution.yml
 ```
 
 ### Demo Script 1
+
 ```yml
 execution:
 - scenario: testlogin
@@ -55,7 +57,9 @@ reporting:
   test-duration: true
 
 ```
+
 ### Demo Script 2
+
 ```yml
 execution:
 - scenario: testlogin
@@ -79,7 +83,9 @@ reporting:
 - console        
 
 ```
+
 ### Demo Script 3
+
 ```yml
 execution:
 - scenario: test
@@ -114,12 +120,14 @@ reporting:
   - rc5?? of bpe>1, stop as failed
 ```
 
-https://www.blazemeter.com/blog/how-to-create-a-lightweight-performance-monitoring-solution-with-docker-grafana-and-influxdb
+<https://www.blazemeter.com/blog/how-to-create-a-lightweight-performance-monitoring-solution-with-docker-grafana-and-influxdb>
 
-https://www.blazemeter.com/blog/gatling-tests-monitoring-with-grafana-and-influxdb
+<https://www.blazemeter.com/blog/gatling-tests-monitoring-with-grafana-and-influxdb>
 
-### Taurus for docker:
+### Taurus for docker
+
 - Create folder name taurus
 - Create sub folder name artifact
+
 ```
 docker run --rm -v C:\ccviews\taurus:/bzt-configs -v C:\ccviews\taurus\artifact:/tmp/artifacts blazemeter/taurus taurus_execution1.yml
