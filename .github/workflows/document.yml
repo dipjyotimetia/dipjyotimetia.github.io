@@ -6,15 +6,13 @@ on:
   push:
     branches: [main] 
 
-env:
-  NODE_OPTIONS: "--openssl-legacy-provider"
 jobs:
   checks:
     if: github.event_name != 'push'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v1
         with:
           node-version: '18.x'
       - name: Test Build
@@ -32,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: actions/setup-node@v1
         with:
           node-version: '18.x'
       - name: Add key to allow access to repository
