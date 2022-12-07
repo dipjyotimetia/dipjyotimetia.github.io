@@ -4,8 +4,10 @@ on:
   pull_request:
     branches: [main]
   push:
-    branches: [main]
+    branches: [main] 
 
+env:
+  NODE_OPTIONS: "--openssl-legacy-provider"
 jobs:
   checks:
     if: github.event_name != 'push'
