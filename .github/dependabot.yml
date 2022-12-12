@@ -17,4 +17,7 @@ updates:
       - "security"
       - "dependencies"  
       - "automerge"
-    open-pull-requests-limit: 10  
+    open-pull-requests-limit: 10
+    ignore:
+    - dependency-name: "clsx"
+      versions: ["2.x","3.x"]
