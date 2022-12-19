@@ -17,25 +17,39 @@ title: Dipjyoti Metia
 **Email**: [dipjyotimetia@gmail.com](mailto:dipjyotimetia@gmail.com)  
 [LinkedIn](https://www.linkedin.com/in/dipjyotimetia/) **|**
 [GitHub](https://github.com/dipjyotimetia) **|**
-[TechBlog](https://medium.com/@dipjyotimetia)
+[TechBlog](https://medium.com/@dipjyotimetia) **|**
+[Portfolio](https://dipjyotimetia.github.io/)  
 
 ### **Experience Summary**
 
-**Lead Software Engineer**  
+**Chapter Lead: Testing**  
 **Company Name**: ANZ  
-**Dates Employed**: May 2020 - Present  
+**Dates Employed**: August 2022 - Present  
+**Location**: Melbourne, Australia  
+
+- Working as a Test Engineering chapter lead.
+- Leading the testing chapter for ANZPlus app core banking services Payments, Accounts, Transaction, Cards, Statements etc developed and backed by Golang in a cloud native environment.
+- Setting up quality principles and shift left mindset within the feature teams and setting up direction towards 100% automation.
+- Worked on integrating the [OpenTelemetry](https://opentelemetry.io/) library to [Golang](https://golang.org/) based [**gRPC**](https://grpc.io/) based api testing framework to track and trace each test failures and getting to the bottom of it.
+- Co-authored the performance tests to include [OpenTelemetry](https://opentelemetry.io/)  
+- Created intelligent [SlackBot](https://slack.com/intl/en-au/) based notification system to tag different responsible env support person on specific group of test failures.
+- Single handedly migrated entire javascript service virtualisation project to Typescript and deploying to CloudRun and re-architected the project to make use of event driven systems by simulating the kafka and PubSub.
+
+**Lead Software Engineer in Test**  
+**Company Name**: ANZ  
+**Dates Employed**: May 2020 - August 2022  
 **Location**: Melbourne, Australia  
 
 - Working as a Lead Software Engineer in Test.
 - Started by developing [Golang](https://golang.org/) based integration test framework to test [**gRPC**](https://grpc.io/) and REST services.
 - Responsible for the development of Test Automation Framework and developing End to End testing strategy for a continuous delivery pipeline.
-- Responsible for testing the core banking services Payment, Account, Transaction, Cards etc developed and backed by Golang and in a cloud native environment.
+- Responsible for testing the core banking services Payment, Account, Transaction, Cards etc developed and backed by Golang in a cloud native environment.
 - Working with google cloud services mainly focusing for kubernetes, cloud pub-sub, cloud function, dataflow pipeline & cloud-run.
 - Creating multiple jobs to run a hourly shakeout tests in parallel and throw notification for any failure and tag person to fix the issues using slack apis and github-actions.
 - Responsible for uplifting the testing capability across multiple feature teams in a cloud native development environment.
 - Focusing for shift left the testing System Test -> Security Test -> Performance Test in a single delivery pipeline.
 - Worked on a performance testing framework using [K6](https://k6.io/) to test rest services and [ghz](https://ghz.sh/) to test gRPC services.
-- Contributed in the End To End performance testing framework developed with [Locust](https://locust.io/) to deploy and test the core banking user journeys in kubernetes and send the matrics to the influxdba and therefore to the grafana dashboard.
+- Contributed in the End To End performance testing framework developed with [Locust](https://locust.io/) to deploy and test the core banking user journeys in kubernetes and send the metrics to the influxdb and therefore to the grafana dashboard.
 - Developed a service virtualization framework using ExpressJs framework and backed by a serverless framework using google cloud function to mock/stub the entire downstream services to perform system testing and performance testing.  
 - Worked on a complex event driven microservice architecture consist of [Kafka](https://kafka.apache.org/) and google cloud pub/sub with realtime streaming services like google dataflow pipeline to injest data from kafka and process it.
 - Worked on a testing framework to test the eventing architecture using the [kafka-go](https://github.com/confluentinc/confluent-kafka-go) and cloud function.
@@ -76,9 +90,9 @@ programmatically using aws sdk for C# and nodejs.
 - Created infrastructure for end to end testing in CI environment by using cloudformation template.
 - Created jenkins and docker environment in aws to run tests in cloud.
 - Familiar with aws fargate to run docker containers.
-- Continuous monitor of tests execution by hooking tests run in elasticsearch and visulize the data in OpenDistro/kibana.
-- Monitor api error logs in sumologic, New Relic dashboards.
-- Created [Runscope](https://www.runscope.com/) dashbord to monitor api 24/7 in production, aned error alert in slack channel.
+- Continuous monitor of tests execution by hooking tests run in elasticsearch and visualize the data in OpenDistro/kibana.
+- Monitor api error logs in [Sumologic](https://www.sumologic.com/), New Relic dashboards.
+- Created [RunScope](https://www.runscope.com/) dashboard to monitor api 24/7 in production, and error alert in slack channel.
 
 **Senior Test Analyst**  
 **Company Name**: National Australia Bank  
@@ -106,7 +120,7 @@ programmatically using aws sdk for C# and nodejs.
 **Test Engineer**  
 **Company Name**: Infosys Ltd  
 **Dates Worked**: Feb 2015 - Oct 2016, 1yr 9mos  
-**Location**: India  
+**Location**: Mysore, India  
 
 - Working as a Test Automation Engineer.
 - Working on an existing behavior driven cucumber selenium framework for web ui automation.
@@ -130,6 +144,7 @@ programmatically using aws sdk for C# and nodejs.
 
 ### **Certifications and Recognitions**
 
+- [Google Certified: Professional Cloud Developer](https://www.credential.net/724eeec8-766a-48a1-b6c5-efc76c27fdb9)  
 - [AWS Certified: Solution Architect Associate](https://www.youracclaim.com/badges/3ef7bcf3-c5a8-43ca-bcea-6405e7d122b8/public_url)
 - [Microsoft Certified: Azure Fundamentals](https://www.youracclaim.com/badges/e91d4b08-c17c-4af7-8dab-7a9da01a179a/public_url)
 - [Scrum Master Certified](https://www.amazon.com/clouddrive/share/mi8Em9y3pfQNMhYNZMNlLNwIGv6vmSGG8MHvR86iTP7)
