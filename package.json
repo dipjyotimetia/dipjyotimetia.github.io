@@ -22,7 +22,7 @@
     "@docusaurus/plugin-content-blog": "^2.3.1",
     "@docusaurus/plugin-content-docs": "^2.3.0",
     "@docusaurus/plugin-content-pages": "^2.3.1",
-    "@docusaurus/plugin-sitemap": "^2.3.0",
+    "@docusaurus/plugin-sitemap": "^2.3.1",
     "@docusaurus/preset-classic": "^2.3.0",
     "@docusaurus/theme-live-codeblock": "^2.3.0",
     "@mdx-js/react": "^1.6.22",
