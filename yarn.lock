@@ -1272,7 +1272,7 @@
     webpack-merge "^5.8.0"
     webpackbar "^5.0.2"
 
-"@docusaurus/core@^2.4.0":
+"@docusaurus/core@2.4.0", "@docusaurus/core@^2.4.0":
   version "2.4.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/core/-/core-2.4.0.tgz#a12c175cb2e5a7e4582e65876a50813f6168913d"
   integrity sha512-J55/WEoIpRcLf3afO5POHPguVZosKmJEQWKBL+K7TAnfuE7i+Y0NPLlkKtnWCehagGsgTqClfQEexH/UT4kELA==
@@ -1445,7 +1445,7 @@
     react-helmet-async "*"
     react-loadable "npm:@docusaurus/react-loadable@5.5.2"
 
-"@docusaurus/plugin-content-blog@2.3.1", "@docusaurus/plugin-content-blog@^2.3.1":
+"@docusaurus/plugin-content-blog@2.3.1":
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-2.3.1.tgz#236b8ee4f20f7047aa9c285ae77ae36683ad48a3"
   integrity sha512-f5LjqX+9WkiLyGiQ41x/KGSJ/9bOjSD8lsVhPvYeUYHCtYpuiDKfhZE07O4EqpHkBx4NQdtQDbp+aptgHSTuiw==
@@ -1457,6 +1457,28 @@
     "@docusaurus/utils" "2.3.1"
     "@docusaurus/utils-common" "2.3.1"
     "@docusaurus/utils-validation" "2.3.1"
+    cheerio "^1.0.0-rc.12"
+    feed "^4.2.2"
+    fs-extra "^10.1.0"
+    lodash "^4.17.21"
+    reading-time "^1.5.0"
+    tslib "^2.4.0"
+    unist-util-visit "^2.0.3"
+    utility-types "^3.10.0"
+    webpack "^5.73.0"
+
+"@docusaurus/plugin-content-blog@^2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-2.4.0.tgz#50dbfbc7b51f152ae660385fd8b34076713374c3"
+  integrity sha512-YwkAkVUxtxoBAIj/MCb4ohN0SCtHBs4AS75jMhPpf67qf3j+U/4n33cELq7567hwyZ6fMz2GPJcVmctzlGGThQ==
+  dependencies:
+    "@docusaurus/core" "2.4.0"
+    "@docusaurus/logger" "2.4.0"
+    "@docusaurus/mdx-loader" "2.4.0"
+    "@docusaurus/types" "2.4.0"
+    "@docusaurus/utils" "2.4.0"
+    "@docusaurus/utils-common" "2.4.0"
+    "@docusaurus/utils-validation" "2.4.0"
     cheerio "^1.0.0-rc.12"
     feed "^4.2.2"
     fs-extra "^10.1.0"
@@ -1688,6 +1710,20 @@
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/types/-/types-2.3.1.tgz#785ade2e0f4e35e1eb7fb0d04c27d11c3991a2e8"
   integrity sha512-PREbIRhTaNNY042qmfSE372Jb7djZt+oVTZkoqHJ8eff8vOIc2zqqDqBVc5BhOfpZGPTrE078yy/torUEZy08A==
+  dependencies:
+    "@types/history" "^4.7.11"
+    "@types/react" "*"
+    commander "^5.1.0"
+    joi "^17.6.0"
+    react-helmet-async "^1.3.0"
+    utility-types "^3.10.0"
+    webpack "^5.73.0"
+    webpack-merge "^5.8.0"
+
+"@docusaurus/types@2.4.0":
+  version "2.4.0"
+  resolved "https://registry.yarnpkg.com/@docusaurus/types/-/types-2.4.0.tgz#f94f89a0253778b617c5d40ac6f16b17ec55ce41"
+  integrity sha512-xaBXr+KIPDkIaef06c+i2HeTqVNixB7yFut5fBXPGI2f1rrmEV2vLMznNGsFwvZ5XmA3Quuefd4OGRkdo97Dhw==
   dependencies:
     "@types/history" "^4.7.11"
     "@types/react" "*"
