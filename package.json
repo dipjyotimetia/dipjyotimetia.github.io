@@ -17,7 +17,7 @@
     "url": "https://dipjyotimetia.github.io/"
   },
   "dependencies": {
-    "@docusaurus/core": "^2.3.1",
+    "@docusaurus/core": "^2.4.0",
     "@docusaurus/mdx-loader": "^2.3.1",
     "@docusaurus/plugin-content-blog": "^2.3.1",
     "@docusaurus/plugin-content-docs": "^2.3.1",
