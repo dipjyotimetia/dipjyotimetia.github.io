@@ -16,7 +16,8 @@ module.exports = {
       items: [
         'snippets/generic/apitestsites',
         'snippets/generic/hyperv',
-      ]
+      ],
+      description: 'Generic category'
     },
     {
       type: 'category',
@@ -35,7 +36,8 @@ module.exports = {
           React:['snippets/programming/react/react1'],
           Python:['snippets/programming/python/python1'],
         }
-      ]
+      ],
+      description: 'Programming category',
     },
     {
       type: 'category',
@@ -71,6 +73,7 @@ module.exports = {
             'snippets/cloud/ci/kubernetes',
             'snippets/cloud/ci/jenkins',
           ],
+          description: 'Cloud category',
         }
       ]
     },
@@ -79,7 +82,8 @@ module.exports = {
       label: 'Security',
       items: [
         'snippets/security/sec1',
-      ]
+      ],
+      description: 'Security category',
     },
     {
       type: 'category',
