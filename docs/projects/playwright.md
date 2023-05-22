@@ -2,7 +2,6 @@
 id: playwrighttestframework
 title: Playwright Test Framework
 sidebar_label: Playwright Test Framework
-slug: /
 description: WEB, API testing framework using playwright
 keywords:
   - playwright
