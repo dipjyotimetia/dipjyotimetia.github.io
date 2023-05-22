@@ -14,6 +14,8 @@ module.exports = {
     {
       type: 'category',
       label: 'Generic',
+      collapsible: true,
+      collapsed: false,
       items: [
         'snippets/generic/apitestsites',
         'snippets/generic/hyperv',
@@ -23,6 +25,8 @@ module.exports = {
     {
       type: 'category',
       label: 'Programming',
+      collapsible: true,
+      collapsed: false,
       items: [
         {
           GO:[
@@ -43,6 +47,8 @@ module.exports = {
     {
       type: 'category',
       label: 'Cloud',
+      collapsible: true,
+      collapsed: false,
       items: [
         {
           AWS:[
@@ -74,13 +80,15 @@ module.exports = {
             'snippets/cloud/ci/kubernetes',
             'snippets/cloud/ci/jenkins',
           ],
-          description: 'Cloud category',
         }
-      ]
+      ],
+      description: 'Cloud category',
     },
     {
       type: 'category',
       label: 'Security',
+      collapsible: true,
+      collapsed: false,
       items: [
         'snippets/security/sec1',
       ],
@@ -89,6 +97,8 @@ module.exports = {
     {
       type: 'category',
       label: 'Performance',
+      collapsible: true,
+      collapsed: false,
       items: [
         'snippets/performance/taurus',
         // 'snippets/performance/k6',
@@ -100,6 +110,8 @@ module.exports = {
     {
       type: 'category',
       label: 'IDE',
+      collapsible: true,
+      collapsed: false,
       items: [
         'snippets/ide/vscode',
       ]
@@ -107,6 +119,8 @@ module.exports = {
     {
       type: 'category',
       label: 'OS & Tools',
+      collapsible: true,
+      collapsed: false,
       items: [
         'snippets/toolos/ubuntu',
         'snippets/toolos/bash',
