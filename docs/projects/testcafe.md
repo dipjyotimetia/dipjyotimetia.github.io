@@ -7,17 +7,19 @@ title: Testcafe Test Framework
 
 ![img](https://raw.githubusercontent.com/DevExpress/testcafe-gh-page-assets/master/src/images/testcafe-ogp-icon.png)
 
-### Installation:
+### Installation
 
 - Install [nodejs 14.5.1 lts](https://nodejs.org/en/download/)
 - Install [VS_Code](https://code.visualstudio.com/download)
 
-### Project Setup:
+### Project Setup
+
 ```bash
-$ git clone repo https://github.com/dipjyotimetia/TestCafeTestFramework.git
-$ npm install
+git clone repo https://github.com/dipjyotimetia/TestCafeTestFramework.git
+npm install
 ```
-### Write Code:
+
+### Write Code
 
 - Add new spec file with the format `TC00*\_SampleTest*\_spec.ts`
 
@@ -47,7 +49,7 @@ test.skip('Create todo', async t => {
 })
 ```
 
-### Test:
+### Test
 
 - `test:chrome` run tests in chrome browser
 
@@ -83,6 +85,7 @@ test.skip('Create todo', async t => {
 });
 
 ```
+
 ### Full Configurations
 
 ```json title=".testcaferc.json"

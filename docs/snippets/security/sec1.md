@@ -1,7 +1,7 @@
 ---
-id: sec1
-title: Get Started
-sidebar_label: Get Started
+id: sec2
+title: Mobile Security Framework (MobSF) 
+sidebar_label: Mobile Security Framework
 ---
 
 https://github.com/MobSF/Mobile-Security-Framework-MobSF

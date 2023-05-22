@@ -3,37 +3,41 @@ id: cypress
 title: Cypress Test Framework
 ---
 
-[![Build Status](https://github.com/dipjyotimetia/CypressTest/workflows/CypressCI/badge.svg)](https://github.com/dipjyotimetia/CypressTest/actions)   
-[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/d463521f/CypressTestFramework)   
+[![Build Status](https://github.com/dipjyotimetia/CypressTest/workflows/CypressCI/badge.svg)](https://github.com/dipjyotimetia/CypressTest/actions)
+[![This project is using Percy.io for visual regression testing.](https://percy.io/static/images/percy-badge.svg)](https://percy.io/d463521f/CypressTestFramework)
 
 ## Cypress Test Framework
 
 ![image](../../static/img/projects/CypressTestFramework.png)
 
 ### Sorry Cypress Dashboard
+
 ![image](../../static/img/projects/SorryCypressDashboard.png)
 ![image](../../static/img/projects/SorryCyResult.png)
 
 ### Cypress Test Result
+
 ![image](../../static/img/projects/CyResult.png)
 
-### Installation:
+### Installation
 
 - Install [nodejs 14.17 lts](https://nodejs.org/en/download/)
 - Install [VS_Code](https://code.visualstudio.com/download)
 
-### Project Setup:
+### Project Setup
+
 ```bash
-$ git clone https://github.com/dipjyotimetia/CypressTestFramework.git
-$ npm i
+git clone https://github.com/dipjyotimetia/CypressTestFramework.git
+npm i
 ```
-### Configure/update/set Test Environments:
+
+### Configure/update/set Test Environments
 
 - Open config and update test environment urls,user,pass and update it to config.js
 - Test environment json files names are case sensitive
 - To run test on specific environment update `configFile=uat or configFile=prod`
 
-### Write Code:
+### Write Code
 
 - Add `/// <reference types="Cypress" />` and `/// <reference types="../support" />` if required `/// <reference types="cypress-downloadfile"/>` reference on the top, to get typed reference.
 - Add new spec file with the format TC00*\_SampleTest*\_spec.js
@@ -66,10 +70,11 @@ describe('Testing Web', function () {
 });
 ```
 
-#### Setup SorryCypress Dashboard:
+#### Setup SorryCypress Dashboard
+
 - `docker-compose up -d`
 
-#### Test:
+#### Test
 
 - `test:cypress` run tests in sorry cypress dashboard
 - `npm run cy:chrome` run tests in chrome browser

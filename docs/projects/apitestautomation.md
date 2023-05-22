@@ -6,26 +6,33 @@ title: Api Test Framework
 ![ApiTest CI](https://github.com/dipjyotimetia/ApiTestAutomation/workflows/ApiTest%20CI/badge.svg?branch=master)  
 
 ### Install node  
-[Nodejs > 12.0](https://nodejs.org/en/)
+
+[Nodejs > 18.0](https://nodejs.org/en/)
 
 ### Install node modules  
+
 ``npm i``
 
 ### Run Tests  
+
 * ``npm test`` to run all test  
 * ``npm run local`` to run specific test
 
 ### Run Tests in docker
+
 * ``./build-docker.sh`` to run all tests in docker container
 
 ## Usage  
+
 ```javascript
 const expect = require('chai').expect,                   // Import chai for assertions
     faker = require('faker'),                           // Faker library to generate fake data
     supertest = require('supertest'),                  // Api test library
     logger = require('../config/logger')(__filename), // Logging info/errors
 ```
+
 ## Example Get Start
+
 ```javascript
 const expect = require('chai').expect,
     faker = require('faker'),
@@ -58,6 +65,7 @@ describe(`Test Description`,()=>{
 })
 
 ```
+
 ### Built With  
 
 | **Dependency**                                                                    | **Use**                                                          |

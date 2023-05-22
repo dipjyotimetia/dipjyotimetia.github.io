@@ -20,12 +20,14 @@ image: ../../static/img/projects/selenium.png
 [![Build Status](https://dev.azure.com/dipjyoti/OpensourceProjects/_apis/build/status/dipjyotimetia.HybridTestFramewrok?branchName=master)](https://dev.azure.com/dipjyoti/OpensourceProjects/_build/latest?definitionId=7&branchName=master)  
 [![SupportedBy JetBrains](../../static/img/projects/jetbrains.svg)](https://www.jetbrains.com/?from=HybridTestFramework)
 
-![img](../../static/img/projects/selenium.png)      
+![img](../../static/img/projects/selenium.png)
 
 ### Supported Platforms  
+
 This framework supports WebUi automation across a variety of browsers like Chrome, Firefox, IE, no only limited to this but extended to test rest api, security and visual testing.
 
 ### Framework Capabilities
+
 * Cross browser testing support
 * Added BrowserStack support for CrossBrowser testing
 * Running tests in docker containers selenium grid
@@ -40,51 +42,64 @@ This framework supports WebUi automation across a variety of browsers like Chrom
 * Database testing support
 * Kafka testing support
 * Kubernetes support
-    
+
 ### Setup & Tools
+
 * [Install IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
 * [Install docker desktop](https://www.docker.com/products/docker-desktop)
 * [Java JDK_11](https://adoptopenjdk.net/)
 * [Gradle](https://gradle.org/next-steps/?version=6.9&format=bin)
-* [Allure](https://github.com/allure-framework/allure2/archive/2.14.0.zip)    
+* [Allure](https://github.com/allure-framework/allure2/archive/2.14.0.zip)
 * Set Environment variables  
-```bash    
+
+```bash
   * JAVA_HOME: Pointing to the Java SDK folder\bin
   * GRADLE_HOME: Pointing to Gradle directory\bin      
   * ALLURE_HOME: Pointing to allure directory\bin  
 ```
+
 ### Getting Started
+
 ```bash
-$ git clone 
-$ import project from IntelliJ IDEA as a gradle project
-$ gradle clean
-$ gradle build
-$ gradle task E2E
-$ gradle allureReport
-$ gradle allureServe
+git clone 
+import project from IntelliJ IDEA as a gradle project
+gradle clean
+gradle build
+gradle task E2E
+gradle allureReport
+gradle allureServe
 ```
+
 ### Docker Compose
-> Spin-up chrome, firefox, selenium hub and OWASP proxy server    
+>
+> Spin-up chrome, firefox, selenium hub and OWASP proxy server
+
 ```bash
-$ docker-compose up -d
+docker-compose up -d
 ```
+
 > Complete infrastructure creation for local run
+
 ```bash
-$ docker-compose -f docker-compose-infra up -d
+docker-compose -f docker-compose-infra up -d
 ```
+
 > Spin-up four additional node-chrome/firefox instances linked to the hub
+
 ```bash
-$ docker-compose scale chrome=5
-$ docker-compose scale firefox=5
+docker-compose scale chrome=5
+docker-compose scale firefox=5
 ```
 
 > Spin-up kafka instances
+
 ```shell
-$ docker-compose -f docker-compose-kafka.yml up
-$ docker-compose -f docker-compose-kafka.yml down --rmi all
+docker-compose -f docker-compose-kafka.yml up
+docker-compose -f docker-compose-kafka.yml down --rmi all
 ```
 
 > Spin-up selenium hub in kubernetes instance
+
 ```shell
 $ kubectl apply -f selenium-k8s-deploy-svc.yaml
 $ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.0.0/aio/deploy/recommended.yaml
@@ -95,30 +110,39 @@ $ kubectl delete deployment selenium-node-firefox
 $ kubectl delete deployment selenium-node-chrome
 $ kubectl delete deployment selenium-hub
 ```
+
 :::tip
+
 ### Write your first user journey
- - Create new class and name as the `TC00*_E2E_TEST-***`
- - Provide jira link in `@Link`
- - Provide all the api components as `@Feature`
- - Provide test severity and description
- - Write test
- - Use CatchBlock in `try/catch` section
+
+* Create new class and name as the `TC00*_E2E_TEST-***`
+* Provide jira link in `@Link`
+* Provide all the api components as `@Feature`
+* Provide test severity and description
+* Write test
+* Use CatchBlock in `try/catch` section
 :::
 
 ### JenkinsExecution  
+
 ![image](../../static/img/projects/jenkinsExecution.png)  
 
 ### Selenium GridServer 2.0
-![image](../../static/img/projects/seleniumGrid.png)    
+
+![image](../../static/img/projects/seleniumGrid.png)
 
 ### Allure Reporting 2.0
-![image](../../static/img/projects/allureReport.png)    
+
+![image](../../static/img/projects/allureReport.png)
 
 ### Gradle Report
+
 ![image](../../static/img/projects/gradleReport.png)  
 
 ### BrowserStack Dashboard
-![image](../../static/img/projects/browserStack.png)      
+
+![image](../../static/img/projects/browserStack.png)
 
 ### LogsView
+
 ![image](../../static/img/projects/logs.png)

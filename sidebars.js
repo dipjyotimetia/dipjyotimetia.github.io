@@ -5,6 +5,7 @@ module.exports = {
       'projects/mobiletestframework',
       'projects/cypress',
       'projects/testcafe',
+      'projects/playwrighttestframework',
       'projects/apitestautomation',
     ],
   },
