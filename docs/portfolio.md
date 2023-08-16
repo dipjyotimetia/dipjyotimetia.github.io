@@ -27,13 +27,13 @@ title: Dipjyoti Metia
 **Dates Employed**: August 2022 - Present  
 **Location**: Melbourne, Australia  
 
-- Working as a Test Engineering chapter lead.
-- Leading the testing chapter for ANZPlus app core banking services Payments, Accounts, Transaction, Cards, Statements etc developed and backed by Golang in a cloud native environment.
-- Setting up quality principles and shift left mindset within the feature teams and setting up direction towards 100% automation.
-- Worked on integrating the [OpenTelemetry](https://opentelemetry.io/) library to [Golang](https://golang.org/) based [**gRPC**](https://grpc.io/) based api testing framework to track and trace each test failures and getting to the bottom of it.
-- Co-authored the performance tests to include [OpenTelemetry](https://opentelemetry.io/)  
-- Created intelligent [SlackBot](https://slack.com/intl/en-au/) based notification system to tag different responsible env support person on specific group of test failures.
-- Single handedly migrated entire javascript service virtualisation project to Typescript and deploying to CloudRun and re-architected the project to make use of event driven systems by simulating the kafka and PubSub.
+- Currently serving as the Chapter Lead for Test Engineering, overseeing the testing domain for ANZPlus app's core banking services such as Payments, Accounts, Transactions, Cards, and Statements. These services are developed using Golang within a cloud-native environment.  
+- Spearheading the establishment of quality principles and a shift-left mindset across feature teams. Providing guidance towards achieving complete automation, aiming for a 100% automated testing approach.  
+- Successfully integrated the [OpenTelemetry](https://opentelemetry.io/) library into our [Golang](https://golang.org/) based [**gRPC**](https://grpc.io/) based api testing framework. This integration enhances our ability to meticulously track and trace the causes of test failures, facilitating comprehensive issue resolution.
+- Collaborated on the creation of performance tests that incorporate [OpenTelemetry](https://opentelemetry.io/) further enhancing our testing capabilities.
+- Devised an intelligent notification system utilizing a [SlackBot](https://slack.com/intl/en-au/) platform. This system intelligently tags responsible environment support personnel for specific groups of test failures, streamlining the communication and resolution process.
+- Undertook the individual effort to migrate an entire JavaScript service virtualization project (Stub Service) to TypeScript. The migrated project is now deployed on CloudRun. Additionally, restructured the project to leverage event-driven systems, effectively simulating Kafka and cloud events mechanisms.
+- Created a golang based command line tool to create test data on the fly and fetch TestData details by calling different microservices internally and showcase that in a yaml format.
 
 **Lead Software Engineer in Test**  
 **Company Name**: ANZ  
@@ -41,19 +41,19 @@ title: Dipjyoti Metia
 **Location**: Melbourne, Australia  
 
 - Working as a Lead Software Engineer in Test.
-- Started by developing [Golang](https://golang.org/) based integration test framework to test [**gRPC**](https://grpc.io/) and REST services.
+- Commenced by crafting an integration test framework using [Golang](https://golang.org/) focused on evaluating both [**gRPC**](https://grpc.io/) and REST services.
 - Responsible for the development of Test Automation Framework and developing End to End testing strategy for a continuous delivery pipeline.
-- Responsible for testing the core banking services Payment, Account, Transaction, Cards etc developed and backed by Golang in a cloud native environment.
-- Working with google cloud services mainly focusing for kubernetes, cloud pub-sub, cloud function, dataflow pipeline & cloud-run.
-- Creating multiple jobs to run a hourly shakeout tests in parallel and throw notification for any failure and tag person to fix the issues using slack apis and github-actions.
-- Responsible for uplifting the testing capability across multiple feature teams in a cloud native development environment.
-- Focusing for shift left the testing System Test -> Security Test -> Performance Test in a single delivery pipeline.
+- Led the testing initiatives for core banking services such as Payments, Accounts, Transactions, and Cards. These services, rooted in Golang, thrive within a cloud-native ecosystem.
+- Collaborated extensively with Google Cloud services, centering efforts on Kubernetes, Cloud Pub/Sub, Cloud Functions, Dataflow pipelines, and Cloud Run.
+- Orchestrated the creation of multiple parallel jobs, running hourly shakeout tests. Swiftly notifying and tagging the necessary personnel through Slack APIs and GitHub Actions in case of any failures.
+- Undertook the task of enhancing testing capabilities across various feature teams within the context of a cloud-native development landscape.
+- Prioritized the shift-left approach for testing, encompassing System Test, Security Test, and Performance Test, all seamlessly integrated within a unified delivery pipeline.
 - Worked on a performance testing framework using [K6](https://k6.io/) to test rest services and [ghz](https://ghz.sh/) to test gRPC services.
 - Contributed in the End To End performance testing framework developed with [Locust](https://locust.io/) to deploy and test the core banking user journeys in kubernetes and send the metrics to the influxdb and therefore to the grafana dashboard.
 - Developed a service virtualization framework using ExpressJs framework and backed by a serverless framework using google cloud function to mock/stub the entire downstream services to perform system testing and performance testing.  
 - Worked on a complex event driven microservice architecture consist of [Kafka](https://kafka.apache.org/) and google cloud pub/sub with realtime streaming services like google dataflow pipeline to injest data from kafka and process it.
 - Worked on a testing framework to test the eventing architecture using the [kafka-go](https://github.com/confluentinc/confluent-kafka-go) and cloud function.
-- Worked on developing a command line application using golang and cobra to provide a single solution to generate multiple authentication tokens required during testing across test environments and providing a streamline way to get multiple test data details.
+- Engineered a command-line application using Golang and Cobra, offering a unified solution to generate essential authentication tokens for testing across various environments. This solution also streamlined the acquisition of diverse test data details.
 - Paired up with the SRE team and creating monitoring dashboards in google cloud monitoring and splunk to monitor the performance of the services and the system health, setup the alerting with predefined SLI(Service level indicator) to throw notifications using slack-bot.
 
 **Software Development Engineer in Test**  
@@ -61,7 +61,7 @@ title: Dipjyoti Metia
 **Dates Employed**: April 2018 – May 2020  
 **Location**: Melbourne, Australia  
 
-- Working as a Software Development Engineer in Test
+- Employed as a Software Development Engineer in Test, my journey has encompassed a wide array of impactful roles and responsibilities, as outlined below:
 - Started by creating Mobile Automation Framework from scratch using [**Appium**](https://appium.io/) with gradle to test native mobile apps for iOS and Android, which supports jenkins integration for CI/CD pipeline and artifactory with ability to run in cloud AWS device farm.
 - Setup [**SeeTest Cloud**](https://experitest.com/) on premise from scratch, starting from getting Experitest vendor, setup server to develop framework to test mobile application iOS & Android in on prem cloud.
 - Created on demand mobile app & api testing by integrated slack with jenkins.
