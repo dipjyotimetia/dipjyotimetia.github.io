@@ -1754,16 +1754,16 @@
     react-live "2.2.3"
     tslib "^2.4.0"
 
-"@docusaurus/theme-mermaid@^2.4.1":
-  version "2.4.1"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-2.4.1.tgz#6bf644f9f7ef3db0e938b484f510d6d80d601419"
-  integrity sha512-cM0ImKIqZfjmlaC+uAjep39kNBvb1bjz429QBHGs32maob4+UnRzVPPpCUCltyPVb4xjG5h1Tyq4pHzhtIikqA==
+"@docusaurus/theme-mermaid@^2.4.3":
+  version "2.4.3"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-2.4.3.tgz#b40194fb4f46813a18d1350a188d43b68a8192dd"
+  integrity sha512-S1tZ3xpowtFiTrpTKmvVbRHUYGOlEG5CnPzWlO4huJT1sAwLR+pD6f9DYUlPv2+9NezF3EfUrUyW9xLH0UP58w==
   dependencies:
-    "@docusaurus/core" "2.4.1"
-    "@docusaurus/module-type-aliases" "2.4.1"
-    "@docusaurus/theme-common" "2.4.1"
-    "@docusaurus/types" "2.4.1"
-    "@docusaurus/utils-validation" "2.4.1"
+    "@docusaurus/core" "2.4.3"
+    "@docusaurus/module-type-aliases" "2.4.3"
+    "@docusaurus/theme-common" "2.4.3"
+    "@docusaurus/types" "2.4.3"
+    "@docusaurus/utils-validation" "2.4.3"
     "@mdx-js/react" "^1.6.22"
     mermaid "^9.2.2"
     tslib "^2.4.0"
