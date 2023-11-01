@@ -9,8 +9,12 @@ module.exports = {
   organizationName: 'dipjyotimetia',
   projectName: 'dipjyotimetia.github.io',
   themes: [
-    '@docusaurus/theme-live-codeblock'
+    '@docusaurus/theme-live-codeblock',
+    '@docusaurus/theme-mermaid'
   ],
+  markdown: {
+    mermaid: true,
+  },
   themeConfig: {
     navbar: {
       title: 'Dipjyoti`s Blog',

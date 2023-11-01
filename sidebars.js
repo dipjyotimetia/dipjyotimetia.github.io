@@ -64,7 +64,7 @@ module.exports = {
             'snippets/cloud/aws/aws11',
             'snippets/cloud/aws/aws12',
             'snippets/cloud/aws/aws13',
-            'snippets/cloud/aws/aws14',
+            // 'snippets/cloud/aws/aws14',
           ],
           GOOGLE:[
             'snippets/cloud/google/google1',
