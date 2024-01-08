@@ -2322,7 +2322,7 @@
     chalk "^4.1.2"
     tslib "^2.6.0"
 
-"@docusaurus/mdx-loader@3.0.1", "@docusaurus/mdx-loader@^3.0.1":
+"@docusaurus/mdx-loader@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/mdx-loader/-/mdx-loader-3.0.1.tgz#89f221e5bcc570983fd61d7ab56d6fbe36810b59"
   integrity sha512-ldnTmvnvlrONUq45oKESrpy+lXtbnTcTsFkOTIDswe5xx5iWJjt6eSa0f99ZaWlnm24mlojcIGoUWNCS53qVlQ==
@@ -2354,7 +2354,7 @@
     vfile "^6.0.1"
     webpack "^5.88.1"
 
-"@docusaurus/mdx-loader@3.1.0":
+"@docusaurus/mdx-loader@3.1.0", "@docusaurus/mdx-loader@^3.0.1":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/mdx-loader/-/mdx-loader-3.1.0.tgz#61d562ff442f62ef04cc31d3f0d5865a8dd390e4"
   integrity sha512-D7onDz/3mgBonexWoQXPw3V2E5Bc4+jYRf9gGUUK+KoQwU8xMDaDkUUfsr7t6UBa/xox9p5+/3zwLuXOYMzGSg==
@@ -2502,7 +2502,7 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-pages@3.0.1", "@docusaurus/plugin-content-pages@^3.0.1":
+"@docusaurus/plugin-content-pages@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-pages/-/plugin-content-pages-3.0.1.tgz#27e6424c77173f867760efe53f848bbab8849ea6"
   integrity sha512-oP7PoYizKAXyEttcvVzfX3OoBIXEmXTMzCdfmC4oSwjG4SPcJsRge3mmI6O8jcZBgUPjIzXD21bVGWEE1iu8gg==
@@ -2516,7 +2516,7 @@
     tslib "^2.6.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-pages@3.1.0":
+"@docusaurus/plugin-content-pages@3.1.0", "@docusaurus/plugin-content-pages@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-pages/-/plugin-content-pages-3.1.0.tgz#cdb73c804ded307e81ceea39874dc0bb540c2dc4"
   integrity sha512-9gntYQFpk+93+Xl7gYczJu8I9uWoyRLnRwS0+NUFcs9iZtHKsdqKWPRrONC9elfN3wJ9ORwTbcVzsTiB8jvYlg==
