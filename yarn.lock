@@ -2573,7 +2573,7 @@
     "@docusaurus/utils-validation" "3.0.1"
     tslib "^2.6.0"
 
-"@docusaurus/plugin-sitemap@3.0.1", "@docusaurus/plugin-sitemap@^3.0.1":
+"@docusaurus/plugin-sitemap@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-3.0.1.tgz#ab55857e90d4500f892e110b30e4bc3289202bd4"
   integrity sha512-xARiWnjtVvoEniZudlCq5T9ifnhCu/GAZ5nA7XgyLfPcNpHQa241HZdsTlLtVcecEVVdllevBKOp7qknBBaMGw==
@@ -2584,6 +2584,21 @@
     "@docusaurus/utils" "3.0.1"
     "@docusaurus/utils-common" "3.0.1"
     "@docusaurus/utils-validation" "3.0.1"
+    fs-extra "^11.1.1"
+    sitemap "^7.1.1"
+    tslib "^2.6.0"
+
+"@docusaurus/plugin-sitemap@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@docusaurus/plugin-sitemap/-/plugin-sitemap-3.1.0.tgz#9d9dbb4d87e6dc46ae9321badf6ac7cd9aa96b23"
+  integrity sha512-TkR5vGBpUooEB9SoW42thahqqwKzfHrQQhkB+JrEGERsl4bKODSuJNle4aA4h6LSkg4IyfXOW8XOI0NIPWb9Cg==
+  dependencies:
+    "@docusaurus/core" "3.1.0"
+    "@docusaurus/logger" "3.1.0"
+    "@docusaurus/types" "3.1.0"
+    "@docusaurus/utils" "3.1.0"
+    "@docusaurus/utils-common" "3.1.0"
+    "@docusaurus/utils-validation" "3.1.0"
     fs-extra "^11.1.1"
     sitemap "^7.1.1"
     tslib "^2.6.0"
