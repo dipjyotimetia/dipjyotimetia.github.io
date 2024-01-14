@@ -2703,16 +2703,16 @@
     react-live "^4.1.5"
     tslib "^2.6.0"
 
-"@docusaurus/theme-mermaid@^3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-3.0.1.tgz#a8e3db9f8ccb680f0a4359e2b0f6427f52223c15"
-  integrity sha512-jquSDnZfazABnC5i+02GzRIvufXKruKgvbYkQjKbI7/LWo0XvBs0uKAcCDGgHhth0t/ON5+Sn27joRfpeSk3Lw==
+"@docusaurus/theme-mermaid@^3.1.0":
+  version "3.1.0"
+  resolved "https://registry.yarnpkg.com/@docusaurus/theme-mermaid/-/theme-mermaid-3.1.0.tgz#1e7f8e96e21b5d180043f8f7793f1b38045c5806"
+  integrity sha512-63y08fvRWIe9satRV1e/Dps9he+sPjQ+kwl4ccQQEzkM2nxeAgWwk8WzpbVhm1Pf02N/11y0C6FcvFqn4dERHA==
   dependencies:
-    "@docusaurus/core" "3.0.1"
-    "@docusaurus/module-type-aliases" "3.0.1"
-    "@docusaurus/theme-common" "3.0.1"
-    "@docusaurus/types" "3.0.1"
-    "@docusaurus/utils-validation" "3.0.1"
+    "@docusaurus/core" "3.1.0"
+    "@docusaurus/module-type-aliases" "3.1.0"
+    "@docusaurus/theme-common" "3.1.0"
+    "@docusaurus/types" "3.1.0"
+    "@docusaurus/utils-validation" "3.1.0"
     mermaid "^10.4.0"
     tslib "^2.6.0"
 
