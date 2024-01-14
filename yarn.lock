@@ -2414,7 +2414,7 @@
     react-helmet-async "*"
     react-loadable "npm:@docusaurus/react-loadable@5.5.2"
 
-"@docusaurus/plugin-content-blog@3.0.1", "@docusaurus/plugin-content-blog@^3.0.1":
+"@docusaurus/plugin-content-blog@3.0.1":
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-3.0.1.tgz#dee6147187c2d8b634252444d60312d12c9571a6"
   integrity sha512-cLOvtvAyaMQFLI8vm4j26svg3ktxMPSXpuUJ7EERKoGbfpJSsgtowNHcRsaBVmfuCsRSk1HZ/yHBsUkTmHFEsg==
@@ -2437,7 +2437,7 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-blog@3.1.0":
+"@docusaurus/plugin-content-blog@3.1.0", "@docusaurus/plugin-content-blog@^3.1.0":
   version "3.1.0"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-blog/-/plugin-content-blog-3.1.0.tgz#d2102e9286486e526dbc0dfc741e53dc5cee0ff0"
   integrity sha512-iMa6WBaaEdYuxckvJtLcq/HQdlA4oEbCXf/OFfsYJCCULcDX7GDZpKxLF3X1fLsax3sSm5bmsU+CA0WD+R1g3A==
