@@ -21,7 +21,7 @@
     "@docusaurus/mdx-loader": "^3.2.1",
     "@docusaurus/plugin-content-blog": "^3.2.1",
     "@docusaurus/plugin-content-docs": "^3.3.2",
-    "@docusaurus/plugin-content-pages": "^3.2.1",
+    "@docusaurus/plugin-content-pages": "^3.3.2",
     "@docusaurus/plugin-sitemap": "^3.2.1",
     "@docusaurus/preset-classic": "^3.2.1",
     "@docusaurus/theme-live-codeblock": "^3.3.2",

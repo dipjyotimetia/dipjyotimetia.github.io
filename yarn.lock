@@ -1792,7 +1792,7 @@
     utility-types "^3.10.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-pages@3.2.1", "@docusaurus/plugin-content-pages@^3.2.1":
+"@docusaurus/plugin-content-pages@3.2.1":
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-pages/-/plugin-content-pages-3.2.1.tgz#7e04c470958147ec8bf72c05d3608f1bb8307aab"
   integrity sha512-TOqVfMVTAHqWNEGM94Drz+PUpHDbwFy6ucHFgyTx9zJY7wPNSG5EN+rd/mU7OvAi26qpOn2o9xTdUmb28QLjEQ==
@@ -1806,7 +1806,7 @@
     tslib "^2.6.0"
     webpack "^5.88.1"
 
-"@docusaurus/plugin-content-pages@3.3.2":
+"@docusaurus/plugin-content-pages@3.3.2", "@docusaurus/plugin-content-pages@^3.3.2":
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/@docusaurus/plugin-content-pages/-/plugin-content-pages-3.3.2.tgz#04fc18d1925618c1102b111b85e6376442c1b7a9"
   integrity sha512-EKc9fQn5H2+OcGER8x1aR+7URtAGWySUgULfqE/M14+rIisdrBstuEZ4lUPDRrSIexOVClML82h2fDS+GSb8Ew==
