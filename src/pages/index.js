@@ -5,8 +5,6 @@ import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import useBaseUrl from '@docusaurus/useBaseUrl';
 import styles from './styles.module.css';
-import { Analytics } from "@vercel/analytics/react"
-import { SpeedInsights } from "@vercel/speed-insights/next"
 import { url } from '../../docusaurus.config';
 
 const features = [
@@ -78,8 +76,6 @@ function Home() {
           </div>
         </div>
       </header>
-      <Analytics />
-      <SpeedInsights />
       <main>
         {features && features.length > 0 && (
           <section className={styles.features}>

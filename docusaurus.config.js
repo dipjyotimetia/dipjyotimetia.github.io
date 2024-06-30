@@ -15,6 +15,15 @@ module.exports = {
   markdown: {
     mermaid: true,
   },
+  plugins: [
+    [
+      'vercel-analytics',
+      {
+        debug: true,
+        mode: 'auto',
+      },
+    ],
+  ],
   themeConfig: {
     navbar: {
       title: 'Dipjyoti`s Blog',
